@@ -3,766 +3,1247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Julissa Ramos - Asesora Financiera de Seguros Monterrey New York Life. Protección especializada para familias mexicanas con soluciones personalizadas.">
-    <meta name="keywords" content="seguros monterrey, vida, gastos médicos mayores, julissa ramos, méxico, asesora financiera">
+    <meta name="description" content="Julissa Ramos — Asesora Financiera Seguros Monterrey New York Life. Protección de vida, gastos médicos mayores y planes de retiro para familias mexicanas.">
+    <meta name="keywords" content="seguros monterrey, vida vitalicio, gastos médicos mayores, julissa ramos, asesora financiera, seguros chihuahua, new york life">
     <meta name="author" content="Julissa Ramos">
-    
-    <!-- Open Graph / Facebook -->
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://julissaramos.com/">
     <meta property="og:title" content="Julissa Ramos | Asesora Financiera Seguros Monterrey New York Life">
-    <meta property="og:description" content="Protege lo que más amas con soluciones personalizadas. Vida y Gastos Médicos Mayores. Asesoría especializada.">
-    <meta property="og:image" content="https://julissaramos.com/preview.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://julissaramos.com/">
-    <meta property="twitter:title" content="Julissa Ramos | Asesora Financiera Seguros Monterrey New York Life">
-    <meta property="twitter:description" content="Protege lo que más amas con soluciones personalizadas. Vida y Gastos Médicos Mayores.">
-    <meta property="twitter:image" content="https://julissaramos.com/preview.jpg">
-    
-    <!-- Instagram / TikTok -->
-    <meta property="og:site_name" content="Julissa Ramos - Seguros Monterrey NYL">
+    <meta property="og:description" content="Protege lo que más amas. Asesoría personalizada en seguros de vida, gastos médicos y planes de retiro.">
+    <meta property="og:image" content="https://julissaramos.com/JR-foto.jpeg">
     <meta property="og:locale" content="es_MX">
-    
+    <meta property="twitter:card" content="summary_large_image">
     <title>Julissa Ramos | Asesora Financiera Seguros Monterrey New York Life</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome — brand/social icons: WhatsApp, Instagram, TikTok, Email -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Phosphor Icons — decorative/UI icons (bold + duotone weights) -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+
+    <!-- Skip to main content — screen reader / keyboard users -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ── Scroll Progress ── -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ── Header ── -->
+    <header class="header" id="header">
+        <nav class="navbar" aria-label="Navegación principal">
             <div class="container">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <img src="logo.jpeg" alt="Julissa Ramos Logo" style="width: 50px; height: 50px; object-fit: contain;">
+                <a class="logo" href="#inicio">
+                    <div class="logo-img">
+                        <img src="logo.jpeg" alt="Julissa Ramos" loading="lazy">
                     </div>
                     <div class="logo-text">
-                        <h2>Julissa Ramos</h2>
-                        <p class="subtitle">Asesora Financiera</p>
+                        <span class="logo-name">Julissa Ramos</span>
+                        <span class="logo-role">Asesora Financiera · SMNYL</span>
                     </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#por-que">¿Qué me hace diferente?</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+                </a>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#por-que" class="nav-link">¿Por qué yo?</a></li>
+                    <li><a href="#testimonios" class="nav-link">Clientes</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li>
+                        <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                           class="nav-cta" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i> Agenda gratis
+                        </a>
+                    </li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-background">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
+    <!-- ── HERO ── -->
+    <main id="main-content">
+    <section id="inicio" class="hero" aria-labelledby="hero-heading">
+        <div class="hero-orbs" aria-hidden="true">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
         </div>
+        <div class="hero-dots" aria-hidden="true"></div>
+        <!-- Geometric grid lines decoration -->
+        <div class="hero-geo" aria-hidden="true">
+            <svg class="hero-geo-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="hexGrid" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+                        <polygon points="30,2 58,17 58,35 30,50 2,35 2,17" fill="none" stroke="rgba(169,127,245,0.07)" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="800" height="600" fill="url(#hexGrid)"/>
+                <!-- Accent lines -->
+                <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(212,168,67,0.04)" stroke-width="1"/>
+                <line x1="0" y1="300" x2="800" y2="300" stroke="rgba(212,168,67,0.04)" stroke-width="1"/>
+                <line x1="0" y1="450" x2="800" y2="450" stroke="rgba(212,168,67,0.04)" stroke-width="1"/>
+                <!-- Diagonal glow line -->
+                <line x1="-100" y1="600" x2="900" y2="-100" stroke="rgba(124,58,237,0.06)" stroke-width="2"/>
+            </svg>
+        </div>
+
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-award"></i>
-                    <span>Asesora SMNYL</span>
+            <div class="hero-grid">
+                <!-- Texto -->
+                <div class="hero-content" data-animate="fadeInLeft">
+                    <div class="hero-eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        Asesora Certificada · Seguros Monterrey NYL
+                    </div>
+
+                    <h1 class="hero-title" id="hero-heading">
+                        Protege lo que<br>
+                        <em>más importa.</em>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Asesoría financiera personalizada para familias y empresas.
+                        Vida, salud y retiro — con el respaldo de la aseguradora
+                        <strong>#1 en México</strong>.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-value">A++</span>
+                            <span class="stat-label">AM Best · Máxima calificación</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-value">175+</span>
+                            <span class="stat-label">años de respaldo NYL</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-value">1:1</span>
+                            <span class="stat-label">Asesoría personalizada</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                           class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Agenda tu asesoría gratuita
+                        </a>
+                        <a href="#servicios" class="btn btn-ghost">
+                            Ver servicios
+                            <i class="ph-bold ph-arrow-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <i class="ph-duotone ph-shield-check" aria-hidden="true" style="color:var(--gold-dark);font-size:1rem;"></i>
+                        <span>Sin compromiso · Respuesta en menos de 1 hora</span>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    Protege <span class="gradient-text">lo que más amas</span><br>
-                    con soluciones personalizadas
-                </h1>
-                <p class="hero-subtitle">Asesoría especializada en protección financiera y patrimonial</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3>A++</h3>
-                        <p>Calificación AM Best</p>
+
+                <!-- Foto / Visual -->
+                <div class="hero-visual" data-animate="fadeInRight">
+                    <div class="hero-photo-wrapper">
+                        <div class="hero-photo-frame">
+                            <img
+                                src="JR-foto.jpeg"
+                                alt="Julissa Ramos, Asesora Financiera Seguros Monterrey New York Life"
+                                class="hero-photo"
+                                width="380"
+                                height="507"
+                                loading="eager"
+                                decoding="async"
+                            >
+                        </div>
+
+                        <!-- Tarjeta flotante 1 — Calificación A++ -->
+                        <div class="float-card float-card-top" data-animate="floatIn">
+                            <i class="ph-duotone ph-trophy float-svg" aria-hidden="true"></i>
+                            <div>
+                                <strong>Calificación A++</strong>
+                                <span>AM Best · SMNYL</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta flotante 2 — Asesoría gratuita -->
+                        <div class="float-card float-card-bottom" data-animate="floatIn">
+                            <i class="ph-duotone ph-check-circle float-svg float-svg-green" aria-hidden="true"></i>
+                            <div>
+                                <strong>Asesoría gratuita</strong>
+                                <span>Sin compromiso</span>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta flotante 3 — Clientes satisfechos -->
+                        <div class="float-card float-card-mid" data-animate="floatIn">
+                            <div class="float-stars" aria-hidden="true">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A843"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A843"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A843"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A843"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#D4A843"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <div>
+                                <strong>5★ Clientes felices</strong>
+                                <span>100+ familias protegidas</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3>#1</h3>
-                        <p>Líder del Sector</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>1 a 1</h3>
-                        <p>Asesoría Personal</p>
-                    </div>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20proteger%20a%20mi%20familia%20con%20un%20seguro" class="btn btn-primary btn-large">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Agenda tu Asesoría Gratuita</span>
-                    </a>
-                    <a href="#servicios" class="btn btn-secondary btn-large">
-                        <span>Conocer Servicios</span>
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <p>Desliza para descubrir</p>
+
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
         </div>
     </section>
 
-    <!-- Qué me hace diferente Section -->
-    <section id="por-que" class="why-me">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Mi Diferencial</span>
-                <h2>¿Qué me hace <span class="highlight">diferente?</span></h2>
-                <p class="section-description">Elegir a un asesor es una decisión importante</p>
+    <!-- ── LOGOS / RESPALDO ── -->
+    <section class="trust-bar" aria-label="Respaldo institucional">
+        <div class="trust-bar-label">Respaldada por</div>
+        <div class="trust-marquee" aria-hidden="true">
+            <div class="trust-marquee-track">
+                <!-- Set 1 -->
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L14.4 8.4H21L15.8 12.6L17.6 19L12 15.4L6.4 19L8.2 12.6L3 8.4H9.6L12 2Z" fill="#D4A843"/>
+                    </svg>
+                    <span>Calificación <strong>A++</strong> AM Best</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L13.5 6.5H18.5L14.5 9.5L16 14L12 11L8 14L9.5 9.5L5.5 6.5H10.5L12 2Z" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="9" stroke="#7C3AED" stroke-width="1.5" fill="none" opacity="0.3"/>
+                    </svg>
+                    <span>Great Place to Work<sup>®</sup></span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#7C3AED" stroke-width="1.5" fill="rgba(124,58,237,0.10)"/>
+                        <circle cx="12" cy="9" r="2.5" stroke="#7C3AED" stroke-width="1.5"/>
+                    </svg>
+                    <span>New York Life · <strong>175+</strong> años</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L20 7V12C20 16.4 16.5 20.5 12 21.5C7.5 20.5 4 16.4 4 12V7L12 3Z" fill="rgba(124,58,237,0.10)" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M9 12L11 14L15 10" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>CONDUSEF Reconocida</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="#7C3AED" stroke-width="1.5"/>
+                        <path d="M4 20C4 17.8 7.6 16 12 16S20 17.8 20 20" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M17 4L18.5 5.5L21 3" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Asesora Certificada <strong>SMNYL</strong></span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="6" width="18" height="13" rx="2" stroke="#7C3AED" stroke-width="1.5" fill="rgba(124,58,237,0.08)"/>
+                        <path d="M3 10H21" stroke="#7C3AED" stroke-width="1.5"/>
+                        <path d="M7 14H10M14 14H17" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Pago de siniestros <strong>comprobado</strong></span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <!-- Set 2 — duplicate for seamless loop -->
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L14.4 8.4H21L15.8 12.6L17.6 19L12 15.4L6.4 19L8.2 12.6L3 8.4H9.6L12 2Z" fill="#D4A843"/>
+                    </svg>
+                    <span>Calificación <strong>A++</strong> AM Best</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L13.5 6.5H18.5L14.5 9.5L16 14L12 11L8 14L9.5 9.5L5.5 6.5H10.5L12 2Z" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="9" stroke="#7C3AED" stroke-width="1.5" fill="none" opacity="0.3"/>
+                    </svg>
+                    <span>Great Place to Work<sup>®</sup></span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#7C3AED" stroke-width="1.5" fill="rgba(124,58,237,0.10)"/>
+                        <circle cx="12" cy="9" r="2.5" stroke="#7C3AED" stroke-width="1.5"/>
+                    </svg>
+                    <span>New York Life · <strong>175+</strong> años</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L20 7V12C20 16.4 16.5 20.5 12 21.5C7.5 20.5 4 16.4 4 12V7L12 3Z" fill="rgba(124,58,237,0.10)" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M9 12L11 14L15 10" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>CONDUSEF Reconocida</span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="#7C3AED" stroke-width="1.5"/>
+                        <path d="M4 20C4 17.8 7.6 16 12 16S20 17.8 20 20" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M17 4L18.5 5.5L21 3" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Asesora Certificada <strong>SMNYL</strong></span>
+                </div>
+                <div class="trust-sep" aria-hidden="true">·</div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="6" width="18" height="13" rx="2" stroke="#7C3AED" stroke-width="1.5" fill="rgba(124,58,237,0.08)"/>
+                        <path d="M3 10H21" stroke="#7C3AED" stroke-width="1.5"/>
+                        <path d="M7 14H10M14 14H17" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Pago de siniestros <strong>comprobado</strong></span>
+                </div>
             </div>
-            
+        </div>
+    </section>
+
+    <!-- ── SERVICIOS ── -->
+    <section id="servicios" class="services" aria-labelledby="servicios-heading">
+        <div class="container">
+            <div class="section-header" data-animate="fadeInUp">
+                <span class="section-tag">Soluciones Integrales</span>
+                <h2 id="servicios-heading">Protección que se adapta<br><span class="text-accent">a tu vida</span></h2>
+                <p class="section-desc">Cada etapa de vida necesita una protección diferente. Encuentra tu plan ideal.</p>
+            </div>
+
+            <div class="services-tabs" data-animate="fadeInUp">
+                <div class="tabs-nav" role="tablist">
+                    <button class="tab-btn active" role="tab" aria-selected="true" data-tab="gmm">
+                        <i class="ph-bold ph-first-aid-kit" aria-hidden="true"></i>
+                        <span>Gastos Médicos</span>
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="vida">
+                        <i class="ph-bold ph-heart" aria-hidden="true"></i>
+                        <span>Vida Vitalicio</span>
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="becas">
+                        <i class="ph-bold ph-graduation-cap" aria-hidden="true"></i>
+                        <span>Segubecas</span>
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="mujer">
+                        <i class="ph-bold ph-flower" aria-hidden="true"></i>
+                        <span>Vida Mujer</span>
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="empresa">
+                        <i class="ph-bold ph-briefcase" aria-hidden="true"></i>
+                        <span>Hombre Clave</span>
+                    </button>
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="retiro">
+                        <i class="ph-bold ph-sun-horizon" aria-hidden="true"></i>
+                        <span>Retiro</span>
+                    </button>
+                </div>
+
+                <div class="tabs-content">
+
+                    <!-- ── Gastos Médicos Mayores ── -->
+                    <div class="tab-panel active" id="tab-gmm" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <div class="service-badge">Más Solicitado</div>
+                                <h3>Gastos Médicos Mayores</h3>
+                                <p class="service-tagline">Tu Salud, Nuestra Prioridad</p>
+                                <p class="service-desc">Accede al nivel de protección médica que necesitas, con cobertura en hospitales de México y el extranjero. Planes individuales y familiares personalizados.</p>
+                                <ul class="service-features">
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Red hospitalaria nacional e internacional</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Hospitalización, medicamentos y especialistas</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Emergencias y traslados</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Planes individuales y familiares</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Enfócate en sanar, no en los gastos</li>
+                                </ul>
+                                <div class="service-tags">
+                                    <span>Familias</span><span>Adultos mayores</span>
+                                    <span>Deportistas</span><span>Viajeros frecuentes</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20necesito%20información%20sobre%20Gastos%20Médicos%20Mayores"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                            <div class="service-visual">
+                                <!-- Big illustration: medical cross with heartbeat line -->
+                                <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.12)" stroke="rgba(169,127,245,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                    <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(169,127,245,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
+                                    <rect x="44" y="32" width="32" height="56" rx="6" fill="none" stroke="#A97FF5" stroke-width="2.5"/>
+                                    <rect x="32" y="44" width="56" height="32" rx="6" fill="none" stroke="#A97FF5" stroke-width="2.5"/>
+                                    <path d="M30 78 Q36 60 42 72 Q48 84 54 66 Q60 48 66 60 Q72 72 78 66 Q84 60 90 70" stroke="#D4A843" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                                <div class="service-highlights">
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-hospital" aria-hidden="true"></i>
+                                        <span>Hospitalización</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-pill" aria-hidden="true"></i>
+                                        <span>Medicamentos</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-stethoscope" aria-hidden="true"></i>
+                                        <span>Especialistas</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-siren" aria-hidden="true"></i>
+                                        <span>Emergencias</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Vida Vitalicio ── -->
+                    <div class="tab-panel" id="tab-vida" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <h3>Vida Vitalicio</h3>
+                                <p class="service-tagline">Protección + Ahorro Garantizado</p>
+                                <p class="service-desc">Protección permanente que crece contigo. Combina respaldo financiero para tu familia con un ahorro que se incrementa con el tiempo.</p>
+                                <ul class="service-features">
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Cobertura de por vida — nunca expira</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Valor en efectivo que puedes utilizar</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Primas niveladas — mismo pago toda la vida</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Herencia garantizada para tu familia</li>
+                                </ul>
+                                <div class="service-tags">
+                                    <span>Herencia</span><span>Ahorro a largo plazo</span>
+                                    <span>Patrimonio familiar</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Vida%20Vitalicio"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Conocer más
+                                </a>
+                            </div>
+                             <div class="service-visual">
+                                 <!-- Heart with growth trend — enlarged + animated -->
+                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.12)" stroke="rgba(169,127,245,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                      <!-- Outer ring pulse -->
+                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(169,127,245,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+                                     <!-- Heart shape -->
+                                     <path d="M60 82 C60 82 30 64 30 44 A18 18 0 0 1 60 38 A18 18 0 0 1 90 44 C90 64 60 82 60 82Z" stroke="#A97FF5" stroke-width="2.5" fill="rgba(169,127,245,0.18)"/>
+                                     <!-- Inner heart glow -->
+                                     <path d="M60 75 C60 75 38 62 38 48 A11 11 0 0 1 60 44 A11 11 0 0 1 82 48 C82 62 60 75 60 75Z" fill="rgba(169,127,245,0.10)"/>
+                                     <!-- Growth line -->
+                                     <path d="M34 78 L46 64 L55 70 L66 52 L78 58" stroke="#D4A843" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                     <!-- Arrow up -->
+                                     <path d="M78 58 L82 52 M78 58 L84 58" stroke="#D4A843" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                     <circle cx="78" cy="58" r="3.5" fill="#D4A843"/>
+                                 </svg>
+                                 <div class="service-highlights">
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-infinity" aria-hidden="true"></i>
+                                         <span>Cobertura vitalicia</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-piggy-bank" aria-hidden="true"></i>
+                                         <span>Valor en efectivo</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-users" aria-hidden="true"></i>
+                                         <span>Herencia familiar</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-lock" aria-hidden="true"></i>
+                                         <span>Prima fija siempre</span>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Segubecas ── -->
+                    <div class="tab-panel" id="tab-becas" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <h3>Segubecas</h3>
+                                <p class="service-tagline">Garantiza su Educación</p>
+                                <p class="service-desc">Asegura el futuro académico de tus hijos. Garantiza los recursos para su educación sin importar lo que pase.</p>
+                                <ul class="service-features">
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Recursos asegurados para cada etapa escolar</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Si falleces, el plan continúa sin pagos</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Ahorro programado con propósito claro</li>
+                                    <li><i class="ph-bold ph-check" aria-hidden="true"></i> Flexibilidad para ajustar aportaciones</li>
+                                </ul>
+                                <div class="service-tags">
+                                    <span>Padres de familia</span><span>Futuros papás</span><span>Abuelos</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Segubecas"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Cotizar ahora
+                                </a>
+                            </div>
+                             <div class="service-visual">
+                                 <!-- Graduation cap with growth path -->
+                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.12)" stroke="rgba(169,127,245,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(169,127,245,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
+                                     <path d="M60 34 L92 50 L60 66 L28 50 Z" stroke="#A97FF5" stroke-width="2.5" stroke-linejoin="round" fill="rgba(169,127,245,0.18)"/>
+                                     <!-- Cap top highlight -->
+                                     <path d="M60 34 L92 50" stroke="rgba(169,127,245,0.5)" stroke-width="1"/>
+                                     <!-- Gown lines -->
+                                     <path d="M42 57 L42 75 C42 75 50 84 60 84 C70 84 78 75 78 75 L78 57" stroke="#A97FF5" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                     <!-- Tassel string -->
+                                     <path d="M92 50 L92 66" stroke="#A97FF5" stroke-width="2.5" stroke-linecap="round"/>
+                                     <circle cx="92" cy="70" r="4" stroke="#D4A843" stroke-width="2" fill="rgba(212,168,67,0.20)"/>
+                                     <!-- Star -->
+                                     <polygon points="60,40 62,46 68,46 63,50 65,56 60,52 55,56 57,50 52,46 58,46" fill="#D4A843"/>
+                                 </svg>
+                                 <div class="service-highlights">
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-student" aria-hidden="true"></i>
+                                         <span>Cada etapa escolar</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-shield-check" aria-hidden="true"></i>
+                                         <span>Continúa si falleces</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-calendar" aria-hidden="true"></i>
+                                         <span>Ahorro programado</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-arrows-out" aria-hidden="true"></i>
+                                         <span>Flexible</span>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Ahorro Vida Mujer ── -->
+                    <div class="tab-panel" id="tab-mujer" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <h3>Ahorro Vida Mujer</h3>
+                                <p class="service-tagline">Diseñado para Ti</p>
+                                <p class="service-desc">Protección especializada que entiende tus necesidades. Ahorro inteligente combinado con coberturas específicas para la mujer.</p>
+                                <ul class="service-features">
+                                    <li><i class="ph-bold ph-check"></i> Coberturas para enfermedades específicas de la mujer</li>
+                                    <li><i class="ph-bold ph-check"></i> Construye tu patrimonio personal</li>
+                                    <li><i class="ph-bold ph-check"></i> Independencia financiera garantizada</li>
+                                    <li><i class="ph-bold ph-check"></i> Seguridad para ti y tu familia</li>
+                                </ul>
+                                <div class="service-tags">
+                                    <span>Emprendedoras</span><span>Profesionistas</span><span>Madres</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Ahorro%20Vida%20Mujer"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Más información
+                                </a>
+                            </div>
+                             <div class="service-visual">
+                                 <!-- Woman + shield + flower detail -->
+                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.12)" stroke="rgba(169,127,245,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(169,127,245,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
+                                     <circle cx="60" cy="36" r="12" stroke="#A97FF5" stroke-width="2.5" fill="rgba(169,127,245,0.15)"/>
+                                     <!-- Body -->
+                                     <path d="M38 88 C38 72 48 62 60 62 C72 62 82 72 82 88" stroke="#A97FF5" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                     <!-- Arms open (confidence) -->
+                                     <path d="M48 70 L36 62 M72 70 L84 62" stroke="#A97FF5" stroke-width="2" stroke-linecap="round"/>
+                                     <!-- Shield badge -->
+                                     <path d="M78 48 C78 48 70 52 60 50 C50 52 42 48 42 48 L42 62 C42 72 50 78 60 80 C70 78 78 72 78 62 Z" stroke="#D4A843" stroke-width="2" fill="rgba(212,168,67,0.14)" stroke-linejoin="round"/>
+                                     <path d="M53 59 L58 64 L69 53" stroke="#D4A843" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                     <!-- Flower petal decoration -->
+                                     <circle cx="98" cy="28" r="3" fill="rgba(169,127,245,0.35)"/>
+                                     <circle cx="104" cy="34" r="2" fill="rgba(212,168,67,0.50)"/>
+                                     <circle cx="22" cy="88" r="2.5" fill="rgba(169,127,245,0.25)"/>
+                                 </svg>
+                                 <div class="service-highlights">
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-heart" aria-hidden="true"></i>
+                                         <span>Coberturas exclusivas</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-trend-up" aria-hidden="true"></i>
+                                         <span>Patrimonio propio</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-crown" aria-hidden="true"></i>
+                                         <span>Independencia</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-users" aria-hidden="true"></i>
+                                         <span>Familia segura</span>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Hombre Clave ── -->
+                    <div class="tab-panel" id="tab-empresa" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <h3>Hombre Clave</h3>
+                                <p class="service-tagline">Protege tu Empresa</p>
+                                <p class="service-desc">Tu negocio depende de personas clave. Protege la continuidad de tu empresa ante imprevistos con tus colaboradores esenciales.</p>
+                                 <ul class="service-features">
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Capital para mantener operaciones</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Deducible de impuestos para la empresa</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Protege tu inversión y esfuerzo</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Ideal para socios y directivos clave</li>
+                                 </ul>
+                                <div class="service-tags">
+                                    <span>PYMES</span><span>Socios fundadores</span><span>Directivos</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20soy%20empresa%20y%20quiero%20información%20sobre%20Hombre%20Clave"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Cotización empresarial
+                                </a>
+                            </div>
+                             <div class="service-visual">
+                                 <!-- Building / key man — detailed -->
+                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.12)" stroke="rgba(169,127,245,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(169,127,245,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
+                                      <!-- Building body -->
+                                     <rect x="30" y="48" width="60" height="44" rx="3" stroke="#A97FF5" stroke-width="2.5" fill="rgba(169,127,245,0.10)"/>
+                                     <!-- Roof -->
+                                     <path d="M26 48 L60 28 L94 48" stroke="#A97FF5" stroke-width="2.5" stroke-linejoin="round" fill="rgba(169,127,245,0.08)"/>
+                                     <!-- Chimney -->
+                                     <rect x="70" y="32" width="8" height="12" rx="1" fill="rgba(169,127,245,0.15)" stroke="#A97FF5" stroke-width="1.5"/>
+                                     <!-- Door -->
+                                     <rect x="50" y="70" width="20" height="22" rx="2" stroke="#A97FF5" stroke-width="2" fill="rgba(169,127,245,0.15)"/>
+                                     <circle cx="67" cy="81" r="2" fill="#A97FF5"/>
+                                     <!-- Windows with gold -->
+                                     <rect x="35" y="56" width="12" height="12" rx="1.5" fill="rgba(212,168,67,0.25)" stroke="#D4A843" stroke-width="1.5"/>
+                                     <rect x="73" y="56" width="12" height="12" rx="1.5" fill="rgba(212,168,67,0.25)" stroke="#D4A843" stroke-width="1.5"/>
+                                     <!-- Key icon -->
+                                     <circle cx="94" cy="36" r="7" stroke="#D4A843" stroke-width="2" fill="rgba(212,168,67,0.15)"/>
+                                     <path d="M94 43 L94 54 M91 50 L94 50 M94 53 L97 53" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+                                 </svg>
+                                 <div class="service-highlights">
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-bank" aria-hidden="true"></i>
+                                         <span>Capital operativo</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-receipt" aria-hidden="true"></i>
+                                         <span>Deducción fiscal</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-handshake" aria-hidden="true"></i>
+                                         <span>Socios protegidos</span>
+                                     </div>
+                                     <div class="highlight-item">
+                                         <i class="ph-bold ph-chart-line-up" aria-hidden="true"></i>
+                                         <span>Negocio continúa</span>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Planes de Retiro ── -->
+                    <div class="tab-panel" id="tab-retiro" role="tabpanel">
+                        <div class="service-card-inner">
+                            <div class="service-info">
+                                <h3>Planes de Retiro</h3>
+                                <p class="service-tagline">Tu Futuro Asegurado</p>
+                                <p class="service-desc">Diseña el retiro que mereces. Ahorro sistemático que te permite mantener tu calidad de vida cuando decidas dejar de trabajar.</p>
+                                 <ul class="service-features">
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Ingreso garantizado en tu retiro</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Crecimiento compuesto — tu dinero trabaja</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Flexibilidad para ajustar aportaciones</li>
+                                     <li><i class="ph-bold ph-check" aria-hidden="true"></i> Protección ante inflación</li>
+                                 </ul>
+                                <div class="service-tags">
+                                    <span>Profesionistas</span><span>Emprendedores</span><span>Freelancers</span>
+                                </div>
+                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Planes%20de%20Retiro"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i> Planear mi retiro
+                                </a>
+                            </div>
+                            <div class="service-visual">
+                                <!-- Retiro: calendar + growth chart + coin stack -->
+                                <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                     <!-- Outer ring animated -->
+                                     <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(169,127,245,0.10)" stroke="rgba(169,127,245,0.35)" stroke-width="1.5" stroke-dasharray="6 4"/>
+                                     <!-- Middle ring counter-rotating -->
+                                     <circle class="svg-ring-inner" cx="60" cy="60" r="44" fill="rgba(169,127,245,0.07)" stroke="rgba(169,127,245,0.18)" stroke-width="1" stroke-dasharray="3 8"/>
+                                    <!-- Calendar base -->
+                                    <rect x="30" y="36" width="38" height="34" rx="3" fill="rgba(169,127,245,0.15)" stroke="#A97FF5" stroke-width="1.8"/>
+                                    <!-- Calendar header -->
+                                    <rect x="30" y="36" width="38" height="9" rx="3" fill="#7C3AED"/>
+                                    <rect x="30" y="42" width="38" height="3" fill="#7C3AED"/>
+                                    <!-- Calendar rings -->
+                                    <rect x="39" y="33" width="3" height="6" rx="1.5" fill="#D4A843"/>
+                                    <rect x="57" y="33" width="3" height="6" rx="1.5" fill="#D4A843"/>
+                                    <!-- Calendar grid dots -->
+                                    <circle cx="39" cy="52" r="1.5" fill="#A97FF5"/>
+                                    <circle cx="47" cy="52" r="1.5" fill="#A97FF5"/>
+                                    <circle cx="55" cy="52" r="1.5" fill="#A97FF5"/>
+                                    <circle cx="63" cy="52" r="1.5" fill="#A97FF5"/>
+                                    <circle cx="39" cy="60" r="1.5" fill="#A97FF5" opacity="0.6"/>
+                                    <circle cx="47" cy="60" r="1.5" fill="#D4A843"/>
+                                    <circle cx="55" cy="60" r="2.5" fill="#D4A843"/>
+                                    <circle cx="63" cy="60" r="1.5" fill="#A97FF5" opacity="0.6"/>
+                                    <!-- Growth bars below calendar -->
+                                    <rect x="32" y="78" width="6" height="10" rx="1" fill="#A97FF5" opacity="0.55"/>
+                                    <rect x="41" y="73" width="6" height="15" rx="1" fill="#A97FF5" opacity="0.70"/>
+                                    <rect x="50" y="67" width="6" height="21" rx="1" fill="#7C3AED" opacity="0.85"/>
+                                    <rect x="59" y="61" width="6" height="27" rx="1" fill="#7C3AED"/>
+                                    <!-- Growth trend arrow -->
+                                    <path d="M70 75 L82 58" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+                                    <polygon points="84,55 82,62 77,58" fill="#D4A843"/>
+                                    <!-- Coin stack (right side) -->
+                                    <ellipse cx="86" cy="80" rx="8" ry="3" fill="#D4A843" opacity="0.9"/>
+                                    <rect x="78" y="77" width="16" height="3" fill="#D4A843" opacity="0.9"/>
+                                    <ellipse cx="86" cy="77" rx="8" ry="3" fill="#F3E6B8"/>
+                                    <rect x="78" y="74" width="16" height="3" fill="#D4A843" opacity="0.8"/>
+                                    <ellipse cx="86" cy="74" rx="8" ry="3" fill="#F3E6B8" opacity="0.9"/>
+                                    <!-- Star accent top right -->
+                                    <path d="M95 28 L96.5 33 L102 33 L97.5 36 L99 41 L95 38 L91 41 L92.5 36 L88 33 L93.5 33 Z" fill="#D4A843" opacity="0.85"/>
+                                </svg>
+                                <div class="service-highlights">
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-calendar-check" aria-hidden="true"></i>
+                                        <span>Retiro garantizado</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-chart-line-up" aria-hidden="true"></i>
+                                        <span>Crecimiento compuesto</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-coins" aria-hidden="true"></i>
+                                        <span>Anti-inflación</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="ph-bold ph-sliders" aria-hidden="true"></i>
+                                        <span>Aportaciones flexibles</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── POR QUÉ YO ── -->
+    <section id="por-que" class="why-me" aria-labelledby="porque-heading">
+        <div class="container">
+            <div class="section-header" data-animate="fadeInUp">
+                <span class="section-tag">Mi Diferencial</span>
+                <h2 id="porque-heading">¿Por qué elegir<br><span class="text-accent">a Julissa?</span></h2>
+            </div>
+
             <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-gem"></i>
+                <div class="why-card" data-animate="fadeInUp" data-delay="0">
+                    <div class="why-card-icon">
+                        <i class="ph-bold ph-diamond" aria-hidden="true"></i>
                     </div>
                     <h3>Transparencia Total</h3>
                     <p>Mi enfoque se basa en la claridad y honestidad. Te explico cada detalle de tu protección sin letra pequeña ni sorpresas.</p>
                 </div>
 
-                <div class="why-card featured">
-                    <div class="featured-badge">Mi Compromiso</div>
-                    <div class="why-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="why-card featured" data-animate="fadeInUp" data-delay="100">
+                    <div class="featured-label">Mi Compromiso</div>
+                    <div class="why-card-icon">
+                        <i class="ph-bold ph-book-open" aria-hidden="true"></i>
                     </div>
                     <h3>Preparación Continua</h3>
-                    <p>Capacitación especializada constante que me permite brindarte asesoría actualizada y responsable, siempre enfocada en tus necesidades reales.</p>
+                    <p>Capacitación especializada constante para brindarte asesoría actualizada y responsable, siempre enfocada en tus necesidades reales.</p>
                 </div>
 
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-handshake"></i>
+                <div class="why-card" data-animate="fadeInUp" data-delay="200">
+                    <div class="why-card-icon">
+                        <i class="ph-bold ph-handshake" aria-hidden="true"></i>
                     </div>
-                    <h3>Confianza que Construye</h3>
+                    <h3>Relaciones Duraderas</h3>
                     <p>No trabajo con ventas rápidas, construyo relaciones duraderas. Tu tranquilidad y la de tu familia son mi prioridad número uno.</p>
                 </div>
             </div>
 
-            <div class="philosophy-box">
-                <div class="philosophy-content">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-heart"></i>
+            <!-- Stats animados -->
+            <div class="why-stats" data-animate="fadeInUp">
+                <div class="why-stat-card">
+                    <span class="why-stat-number" data-counter="100" data-suffix="+">0</span>
+                    <span class="why-stat-label">Familias protegidas</span>
+                </div>
+                <div class="why-stat-card">
+                    <span class="why-stat-number" data-counter="5" data-suffix="★">0</span>
+                    <span class="why-stat-label">Calificación clientes</span>
+                </div>
+                <div class="why-stat-card">
+                    <span class="why-stat-number" data-counter="10" data-suffix="+ años">0</span>
+                    <span class="why-stat-label">De experiencia</span>
+                </div>
+            </div>
+
+            <!-- Filosofía -->
+            <div class="philosophy-box" data-animate="fadeInUp">
+                <div class="philosophy-icon">
+                    <i class="ph-duotone ph-sparkle" aria-hidden="true"></i>
+                </div>
+                <div class="philosophy-text">
+                    <h3>Mi Filosofía</h3>
+                    <p>Mi trabajo se basa en la <strong>transparencia</strong>, la <strong>preparación</strong> y la <strong>confianza</strong>. Con capacitación especializada y continua, brindo asesoría clara, responsable y actualizada — siempre enfocada en <strong>soluciones reales para cada cliente</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Respaldo SMNYL -->
+            <div class="smnyl-grid" data-animate="fadeInUp">
+                <div class="smnyl-card">
+                    <div class="smnyl-icon">
+                        <i class="ph-bold ph-trophy" aria-hidden="true"></i>
                     </div>
-                    <div class="philosophy-text">
-                        <h3>Mi Enfoque</h3>
-                        <p>Por ello, mi trabajo se basa en la <strong>transparencia</strong>, la <strong>preparación</strong> y la <strong>confianza</strong>. Cuento con una capacitación especializada y continua que me permite brindar asesoría clara, responsable y actualizada, siempre enfocada en ofrecer <strong>soluciones acordes a las necesidades reales de cada cliente</strong>.</p>
+                    <h4>Líderes en el Sector</h4>
+                    <p>Décadas protegiendo familias mexicanas. Una trayectoria que habla por sí sola.</p>
+                </div>
+                <div class="smnyl-card">
+                    <div class="smnyl-icon">
+                        <i class="ph-bold ph-star" aria-hidden="true"></i>
                     </div>
+                    <h4>Calificación A++ AM Best</h4>
+                    <p>La calificación más alta en América Latina por solvencia financiera.</p>
+                </div>
+                <div class="smnyl-card">
+                    <div class="smnyl-icon">
+                        <i class="ph-bold ph-globe" aria-hidden="true"></i>
+                    </div>
+                    <h4>Respaldo New York Life</h4>
+                    <p>Empresa mutualista más grande de EE.UU. 175+ años de experiencia.</p>
+                </div>
+                <div class="smnyl-card">
+                    <div class="smnyl-icon">
+                        <i class="ph-bold ph-medal" aria-hidden="true"></i>
+                    </div>
+                    <h4>Great Place to Work®</h4>
+                    <p>Reconocida como una de las mejores empresas para trabajar en México.</p>
+                </div>
+                <div class="smnyl-card">
+                    <div class="smnyl-icon">
+                        <i class="ph-bold ph-heart" aria-hidden="true"></i>
+                    </div>
+                    <h4>Compromiso Social</h4>
+                    <p>Programas "Niños en Duelo" y atención especializada. Reconocidos por CONDUSEF.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Servicios Premium -->
-    <section id="servicios" class="services-premium">
+    <!-- ── TESTIMONIOS ── -->
+    <section id="testimonios" class="testimonials" aria-labelledby="testimonios-heading">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Soluciones Integrales</span>
-                <h2>Protección que se adapta a <span class="highlight">tu vida</span></h2>
-                <p class="section-description">Diseñamos soluciones para cada etapa y estilo de vida</p>
+            <div class="section-header" data-animate="fadeInUp">
+                <span class="section-tag">Testimonios</span>
+                <h2 id="testimonios-heading">Lo que dicen<br><span class="text-accent">mis clientes</span></h2>
             </div>
 
-                                    <div class="services-showcase">
-                <!-- Gastos Médicos Mayores -->
-                <div class="service-premium highlight">
-                    <div class="popular-badge">
-                        <i class="fas fa-star"></i> Más Solicitado
-                    </div>
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-hospital-alt"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Gastos Médicos Mayores</h3>
-                            <p class="service-premium-tagline">Tu Salud, Nuestra Prioridad</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Accede al nivel de protección médica que necesitas. Diseñados para adaptarse a diferentes estilos y etapas de vida. Cobertura en hospitales de México y el extranjero.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Cobertura Amplia</strong>
-                                    <p>Red hospitalaria nacional e internacional</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Protección Familiar</strong>
-                                    <p>Planes individuales y familiares personalizados</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Sin Preocupaciones</strong>
-                                    <p>Enfócate en tu recuperación, no en los gastos</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="testimonials-wrapper" data-animate="fadeInUp">
+                <div class="testimonials-track" id="testimonialsTrack">
 
-                        <div class="coverage-highlights">
-                            <div class="coverage-item">
-                                <i class="fas fa-hospital"></i>
-                                <span>Hospitalización</span>
-                            </div>
-                            <div class="coverage-item">
-                                <i class="fas fa-pills"></i>
-                                <span>Medicamentos</span>
-                            </div>
-                            <div class="coverage-item">
-                                <i class="fas fa-user-md"></i>
-                                <span>Especialistas</span>
-                            </div>
-                            <div class="coverage-item">
-                                <i class="fas fa-ambulance"></i>
-                                <span>Emergencias</span>
-                            </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
-
-                        <div class="use-cases">
-                            <h4>Perfecto para:</h4>
-                            <div class="tags">
-                                <span class="tag">Familias</span>
-                                <span class="tag">Adultos mayores</span>
-                                <span class="tag">Deportistas</span>
-                                <span class="tag">Viajeros frecuentes</span>
+                        <blockquote>
+                            "Julissa me explicó todo con mucha paciencia. Sin tecnicismos, sin prisa. Hoy tengo un seguro de GMM para toda mi familia y dormimos mucho más tranquilos."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MG</div>
+                            <div>
+                                <strong>María G.</strong>
+                                <span>Madre de familia · Chihuahua</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20necesito%20información%20sobre%20Gastos%20Médicos%20Mayores" class="btn btn-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Solicitar Cotización</span>
-                        </a>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <blockquote>
+                            "Como emprendedor necesitaba proteger mi negocio. Julissa me asesoró en Hombre Clave y Retiro. Clarísima, profesional y siempre disponible."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RL</div>
+                            <div>
+                                <strong>Ricardo L.</strong>
+                                <span>Empresario · PYME</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <blockquote>
+                            "Contraté Segubecas para mi hija de 3 años. Julissa fue honesta sobre cada opción y nunca sentí que me querían vender algo — sentí que realmente le importaba el futuro de mi niña."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div>
+                                <strong>Ana P.</strong>
+                                <span>Mamá · Profesionista</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <blockquote>
+                            "El Ahorro Vida Mujer fue la mejor decisión que he tomado. Julissa me guió paso a paso y hoy tengo un plan que me da seguridad e independencia financiera."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CF</div>
+                            <div>
+                                <strong>Claudia F.</strong>
+                                <span>Emprendedora</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D4A843" stroke="#D4A843" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <blockquote>
+                            "Llevaba años posponiendo contratar un seguro de vida. Julissa me ayudó a entender por qué es urgente y me encontró el plan perfecto para mi presupuesto. 100% recomendada."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JM</div>
+                            <div>
+                                <strong>Jorge M.</strong>
+                                <span>Papá de familia</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Seguro de Vida Vitalicio -->
-                <div class="service-premium">
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Vida Vitalicio</h3>
-                            <p class="service-premium-tagline">Protección + Ahorro Garantizado</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Protección permanente que crece contigo. Combina respaldo financiero para tu familia con un ahorro que se incrementa con el tiempo.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Protección de por Vida</strong>
-                                    <p>Cobertura que nunca expira</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Valor en Efectivo</strong>
-                                    <p>Genera ahorro que puedes utilizar</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Primas Niveladas</strong>
-                                    <p>Mismo pago toda la vida</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="use-cases">
-                            <h4>Ideal para:</h4>
-                            <div class="tags">
-                                <span class="tag">Herencia</span>
-                                <span class="tag">Ahorro a largo plazo</span>
-                                <span class="tag">Patrimonio familiar</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Vida%20Vitalicio" class="btn btn-outline-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Conocer Más</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Segubecas -->
-                <div class="service-premium">
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Segubecas</h3>
-                            <p class="service-premium-tagline">Garantiza su Educación</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Asegura el futuro académico de tus hijos. Garantiza los recursos para su educación sin importar lo que pase.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Educación Garantizada</strong>
-                                    <p>Recursos asegurados para cada etapa escolar</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Protección Familiar</strong>
-                                    <p>Si fallas tú, el plan continúa sin pagos</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Ahorro Programado</strong>
-                                    <p>Disciplina financiera con propósito claro</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="use-cases">
-                            <h4>Perfecto para:</h4>
-                            <div class="tags">
-                                <span class="tag">Padres de familia</span>
-                                <span class="tag">Futuros papás</span>
-                                <span class="tag">Abuelos</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Segubecas" class="btn btn-outline-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Cotizar Ahora</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Ahorro Vida Mujer -->
-                <div class="service-premium">
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-female"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Ahorro Vida Mujer</h3>
-                            <p class="service-premium-tagline">Diseñado para Ti</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Protección especializada que entiende tus necesidades. Ahorro inteligente combinado con coberturas específicas para la mujer.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Coberturas Especializadas</strong>
-                                    <p>Enfermedades específicas de la mujer</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Ahorro con Propósito</strong>
-                                    <p>Construye tu patrimonio personal</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Independencia Financiera</strong>
-                                    <p>Seguridad para ti y tu familia</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="use-cases">
-                            <h4>Ideal para:</h4>
-                            <div class="tags">
-                                <span class="tag">Mujeres emprendedoras</span>
-                                <span class="tag">Profesionistas</span>
-                                <span class="tag">Madres</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Ahorro%20Vida%20Mujer" class="btn btn-outline-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Más Información</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Hombre Clave -->
-                <div class="service-premium">
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Hombre Clave</h3>
-                            <p class="service-premium-tagline">Protege tu Empresa</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Tu negocio depende de personas clave. Protege la continuidad de tu empresa ante imprevistos con tus colaboradores esenciales.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Continuidad del Negocio</strong>
-                                    <p>Capital para mantener operaciones</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Deducible de Impuestos</strong>
-                                    <p>Beneficios fiscales para la empresa</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Tranquilidad Empresarial</strong>
-                                    <p>Protege tu inversión y esfuerzo</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="use-cases">
-                            <h4>Para empresas:</h4>
-                            <div class="tags">
-                                <span class="tag">PYMES</span>
-                                <span class="tag">Socios fundadores</span>
-                                <span class="tag">Directivos clave</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20soy%20empresa%20y%20quiero%20información%20sobre%20Hombre%20Clave" class="btn btn-outline-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Cotización Empresarial</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Planes de Retiro -->
-                <div class="service-premium">
-                    <div class="service-premium-header">
-                        <div class="service-premium-icon">
-                            <i class="fas fa-umbrella-beach"></i>
-                        </div>
-                        <div class="service-premium-title">
-                            <h3>Planes de Retiro</h3>
-                            <p class="service-premium-tagline">Tu Futuro Asegurado</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-premium-body">
-                        <p class="service-description">Diseña el retiro que mereces. Ahorro sistemático que te permite mantener tu calidad de vida cuando decidas dejar de trabajar.</p>
-                        
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Ingreso Garantizado</strong>
-                                    <p>Recursos mensuales en tu retiro</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Crecimiento Compuesto</strong>
-                                    <p>Tu dinero trabaja para ti</p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Flexibilidad Total</strong>
-                                    <p>Ajusta aportaciones según tus posibilidades</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="use-cases">
-                            <h4>Ideal para:</h4>
-                            <div class="tags">
-                                <span class="tag">Profesionistas</span>
-                                <span class="tag">Emprendedores</span>
-                                <span class="tag">Freelancers</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-premium-footer">
-                        <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Planes%20de%20Retiro" class="btn btn-outline-primary">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Planear mi Retiro</span>
-                        </a>
-                    </div>
+                <div class="testimonials-controls">
+                    <button class="testimonial-btn" id="testimonialPrev" aria-label="Anterior">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn" id="testimonialNext" aria-label="Siguiente">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Beneficios Exclusivos -->
-    <section id="beneficios" class="exclusive-benefits">
+    <!-- ── FAQ ── -->
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Respaldo de Clase Mundial</span>
-                <h2>¿Por qué <span class="highlight">Monterrey New York Life</span>?</h2>
-            </div>
-
-            <div class="benefits-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Líderes en el Sector</h3>
-                        <p>Décadas protegiendo familias mexicanas. Una trayectoria que habla por sí sola.</p>
-                    </div>
+            <div class="faq-layout">
+                <div class="faq-header" data-animate="fadeInLeft">
+                    <span class="section-tag">FAQ</span>
+                    <h2 id="faq-heading">Preguntas<br><span class="text-accent">frecuentes</span></h2>
+                    <p>¿Tienes dudas? Aquí resolvemos las más comunes. Si no encuentras lo que buscas, escríbeme directamente.</p>
+                    <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20tengo%20una%20pregunta%20sobre%20seguros"
+                       class="btn btn-primary faq-cta" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Pregunta directamente
+                    </a>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Calificación A++ de AM Best</h3>
-                        <p>La calificación más alta en América Latina por solvencia financiera y respuesta efectiva.</p>
-                    </div>
-                </div>
+                <div class="faq-list" data-animate="fadeInRight">
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-globe-americas"></i>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cuánto cuesta contratar un seguro de vida?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El costo varía según tu edad, el tipo de seguro, la cobertura que desees y tu estado de salud. Por eso ofrezco una <strong>asesoría gratuita y personalizada</strong> donde analizamos juntos cuál es la mejor opción para tu presupuesto y necesidades. No existe un precio único — existe el precio correcto para ti.</p>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Respaldo de New York Life</h3>
-                        <p>Parte de la empresa mutualista de seguros de vida más grande de Estados Unidos. 175+ años de experiencia.</p>
-                    </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-medal"></i>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Necesito examen médico para contratar?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Depende del tipo de plan y la suma asegurada. Muchos productos de Seguros Monterrey NYL permiten contratación sin examen médico previo, especialmente en montos menores. En tu asesoría personalizada te digo exactamente qué se requiere.</p>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Great Place to Work®</h3>
-                        <p>Reconocida como una de las mejores compañías para trabajar en México por nuestra cultura organizacional.</p>
-                    </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-heart"></i>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cuál es la diferencia entre seguro de vida y gastos médicos?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El <strong>seguro de vida</strong> protege económicamente a tu familia si tú falleces — les entrega una suma de dinero para que sigan adelante. Los <strong>gastos médicos mayores</strong> te cubren a ti cuando te enfermas o sufres un accidente grave, pagando hospitales, cirugías, médicos y medicamentos. Son complementarios, no sustitutos.</p>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Compromiso Social</h3>
-                        <p>Programas como "Niños en Duelo" y atención especializada para adultos mayores. Reconocidos por CONDUSEF.</p>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Puedo contratar si ya tengo una enfermedad preexistente?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, en muchos casos es posible. Algunos productos pueden incluir condiciones preexistentes bajo ciertas modalidades o con ajustes en la prima. Lo importante es ser transparente desde el inicio — yo te ayudo a encontrar la mejor opción para tu situación específica.</p>
+                        </div>
                     </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Qué tan rápido se pagan las reclamaciones?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Seguros Monterrey New York Life tiene una de las respuestas más rápidas del sector. En gastos médicos mayores, hospitales de la red trabajan directamente con la aseguradora — tú no adelantas nada. En seguros de vida, los tiempos de pago dependen de la documentación, pero SMNYL es reconocida por su eficiencia y honestidad en el pago.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Puedo cancelar mi seguro cuando quiera?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, aunque no siempre es la mejor decisión financiera. Los seguros de vida tienen valor en efectivo acumulado que puedes perder si cancelas anticipadamente. En tu asesoría te explico claramente las condiciones de cada producto para que tomes la mejor decisión informada.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿La asesoría con Julissa tiene algún costo?</span>
+                            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>No. La asesoría es 100% gratuita y sin compromiso.</strong> Mi objetivo es encontrar el plan correcto para ti — si no hay un producto que se adapte a tu situación, te lo digo con honestidad. Trabajo construyendo relaciones de confianza, no vendiendo por vender.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section id="contacto" class="final-cta">
-        <div class="cta-background">
-            <div class="cta-shape shape-1"></div>
-            <div class="cta-shape shape-2"></div>
+    <!-- ── CTA FINAL ── -->
+    <section id="contacto" class="final-cta" aria-labelledby="cta-heading">
+        <div class="cta-orbs" aria-hidden="true">
+            <div class="cta-orb cta-orb-1"></div>
+            <div class="cta-orb cta-orb-2"></div>
+        </div>
+        <!-- Geometric pattern overlay -->
+        <div class="cta-geo" aria-hidden="true">
+            <svg class="cta-geo-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="ctaHex" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+                        <polygon points="30,2 56,16 56,44 30,58 4,44 4,16" fill="none" stroke="rgba(169,127,245,1)" stroke-width="0.8"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#ctaHex)"/>
+                <!-- Diagonal accent lines -->
+                <line x1="0" y1="400" x2="400" y2="0" stroke="rgba(212,168,67,0.4)" stroke-width="1"/>
+                <line x1="200" y1="400" x2="600" y2="0" stroke="rgba(212,168,67,0.25)" stroke-width="1"/>
+                <line x1="400" y1="400" x2="800" y2="0" stroke="rgba(212,168,67,0.15)" stroke-width="1"/>
+            </svg>
         </div>
         <div class="container">
-            <div class="cta-content">
-                <h2>¿Listo para <span class="gradient-text">proteger tu futuro?</span></h2>
-                <p class="cta-subtitle">Agenda una asesoría gratuita y sin compromiso. Charlemos sobre tus necesidades y encontremos el plan perfecto para ti.</p>
-                
+            <div class="cta-content" data-animate="fadeInUp">
+                <span class="section-tag">Da el primer paso</span>
+                <h2 id="cta-heading">¿Listo para proteger<br><em>tu futuro?</em></h2>
+                <p>Agenda una asesoría gratuita y sin compromiso. Hablemos de tus necesidades y construyamos juntos el plan perfecto para ti y tu familia.</p>
+
                 <div class="cta-features">
-                    <div class="cta-feature">
-                        <i class="fas fa-comments"></i>
-                        <span>Respuesta inmediata</span>
+                    <div class="cta-feat">
+                        <i class="ph-duotone ph-chat-circle-text" aria-hidden="true"></i>
+                        <span>Respuesta en menos de 1 hora</span>
                     </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-gift"></i>
-                        <span>Asesoría sin costo</span>
+                    <div class="cta-feat">
+                        <i class="ph-duotone ph-gift" aria-hidden="true"></i>
+                        <span>Asesoría 100% gratuita</span>
                     </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-user-check"></i>
+                    <div class="cta-feat">
+                        <i class="ph-duotone ph-shield-check" aria-hidden="true"></i>
                         <span>Sin compromiso</span>
                     </div>
                 </div>
 
-                <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesoría%20gratuita" class="btn btn-cta">
+                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                   class="btn btn-cta" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i>
-                    <span>Contactar por WhatsApp</span>
-                    <i class="fas fa-arrow-right"></i>
+                    Contactar por WhatsApp
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
 
-                <p class="cta-note">📱 Respuesta rápida y personalizada</p>
+                <p class="cta-note">📱 +52 614 603 8380 · Lun–Vie 9–18 h · Sáb 9–14 h</p>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Section -->
-    <section class="social-media-section">
+    <!-- ── REDES SOCIALES ── -->
+    <section class="social-section" aria-labelledby="social-heading">
         <div class="container">
-            <div class="social-media-content">
-                <div class="social-media-text">
-                    <h2>📱 Sígueme en Redes Sociales</h2>
-                    <p>Contenido diario sobre seguros, consejos financieros y respuestas a tus dudas. ¡Únete a la comunidad!</p>
-                </div>
-                <div class="social-media-cards">
-                    <a href="https://www.instagram.com/seguroquesiconjuly/" target="_blank" class="social-media-card instagram">
-                        <div class="social-media-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="social-media-info">
-                            <h3>Instagram</h3>
-                            <p>@seguroquesiconjuly</p>
-                            <span class="social-cta">Sígueme <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
+            <div class="social-header" data-animate="fadeInUp">
+                <h2 id="social-heading" class="social-title">Sígueme en redes</h2>
+                <p>Consejos financieros, novedades y respuestas a tus dudas — todos los días.</p>
+            </div>
+            <div class="social-cards" data-animate="fadeInUp">
+                <a href="https://www.instagram.com/seguroquesiconjuly/" target="_blank" rel="noopener noreferrer"
+                   class="social-card instagram">
+                    <div class="social-card-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="social-card-info">
+                        <strong>Instagram</strong>
+                        <span>@seguroquesiconjuly</span>
+                    </div>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
 
-                    <a href="https://www.tiktok.com/@julissaramosgalav" target="_blank" class="social-media-card tiktok">
-                        <div class="social-media-icon">
-                            <i class="fab fa-tiktok"></i>
-                        </div>
-                        <div class="social-media-info">
-                            <h3>TikTok</h3>
-                            <p>@julissaramosgalav</p>
-                            <span class="social-cta">Sígueme <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
+                <a href="https://www.tiktok.com/@julissaramosgalav" target="_blank" rel="noopener noreferrer"
+                   class="social-card tiktok">
+                    <div class="social-card-icon"><i class="fab fa-tiktok"></i></div>
+                    <div class="social-card-info">
+                        <strong>TikTok</strong>
+                        <span>@julissaramosgalav</span>
+                    </div>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
 
-                    <a href="mailto:julissaramosgal@gmail.com" class="social-media-card email">
-                        <div class="social-media-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="social-media-info">
-                            <h3>Email</h3>
-                            <p>julissaramosgal@gmail.com</p>
-                            <span class="social-cta">Enviar correo <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
+                <a href="mailto:julissaramosgal@gmail.com" class="social-card email">
+                    <div class="social-card-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="social-card-info">
+                        <strong>Email</strong>
+                        <span>julissaramosgal@gmail.com</span>
+                    </div>
+                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5216146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20seguros" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">¡Escríbeme!</span>
-    </a>
+    </main><!-- /.main -->
 
-    <!-- Footer -->
+    <!-- ── FOOTER ── -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-main">
-                <div class="footer-col">
+            <div class="footer-grid">
+                <div class="footer-brand">
                     <div class="footer-logo">
-                        <div class="logo-icon">
-                            <img src="logo.jpeg" alt="Julissa Ramos Logo" style="width: 50px; height: 50px; object-fit: contain;">
-                        </div>
+                        <img src="logo.jpeg" alt="Julissa Ramos" loading="lazy">
                         <div>
-                            <h3>Julissa Ramos</h3>
-                            <p>Asesora Financiera</p>
+                            <strong>Julissa Ramos</strong>
+                            <span>Asesora Financiera · SMNYL</span>
                         </div>
                     </div>
-                    <p class="footer-description">Construyendo tranquilidad para las familias mexicanas. Con el respaldo de Monterrey New York Life.</p>
-                    <div class="footer-social">
-                        <a href="https://wa.me/5216146038380" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/seguroquesiconjuly/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@julissaramosgalav" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="mailto:julissaramosgal@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <p>Construyendo tranquilidad para las familias mexicanas con el respaldo de Monterrey New York Life.</p>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/526146038380" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/seguroquesiconjuly/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@julissaramosgalav" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="mailto:julissaramosgal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#servicios">Seguros de Vida</a></li>
                         <li><a href="#servicios">Gastos Médicos Mayores</a></li>
-                        <li><a href="#servicios">Seguros Grupales</a></li>
-                        <li><a href="#beneficios">Beneficios Exclusivos</a></li>
+                        <li><a href="#servicios">Seguro de Vida Vitalicio</a></li>
+                        <li><a href="#servicios">Segubecas</a></li>
+                        <li><a href="#servicios">Ahorro Vida Mujer</a></li>
+                        <li><a href="#servicios">Hombre Clave</a></li>
+                        <li><a href="#servicios">Planes de Retiro</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="https://www.mnyl.com.mx/" target="_blank">Seguros Monterrey NYL</a></li>
-                        <li><a href="https://www.mnyl.com.mx/conocenos/historia/" target="_blank">Nuestra Historia</a></li>
-                        <li><a href="https://www.mnyl.com.mx/conocenos/nuestra-filosofia/" target="_blank">Filosofía</a></li>
-                        <li><a href="https://www.mnyl.com.mx/ayuda/servicio-al-cliente/" target="_blank">Servicio al Cliente</a></li>
+                        <li><a href="https://www.mnyl.com.mx/" target="_blank" rel="noopener noreferrer">Seguros Monterrey NYL</a></li>
+                        <li><a href="https://www.mnyl.com.mx/conocenos/historia/" target="_blank" rel="noopener noreferrer">Nuestra Historia</a></li>
+                        <li><a href="https://www.mnyl.com.mx/conocenos/nuestra-filosofia/" target="_blank" rel="noopener noreferrer">Filosofía</a></li>
+                        <li><a href="https://www.mnyl.com.mx/ayuda/servicio-al-cliente/" target="_blank" rel="noopener noreferrer">Servicio al Cliente</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Contacto</h4>
+                    <address>
                     <ul class="footer-contact">
                         <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/5216146038380">+52 614 603 8380</a>
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <a href="https://wa.me/526146038380" target="_blank" rel="noopener noreferrer">+52 614 603 8380</a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:julissaramosgal@gmail.com">julissaramosgal@gmail.com</a>
                         </li>
                         <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Lun-Vie: 9:00 - 18:00</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Lun–Vie: 9:00 – 18:00</span>
                         </li>
                         <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Sábados: 9:00 - 14:00</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>Sábados: 9:00 – 14:00</span>
                         </li>
                     </ul>
+                    </address>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Julissa Ramos - Asesora Financiera Monterrey New York Life</p>
-                <p class="disclaimer">Esta página es operada de forma independiente por un asesor de Monterrey New York Life®. Proteger Mejor® es una marca registrada.</p>
+                <p>&copy; 2026 Julissa Ramos — Asesora Financiera Monterrey New York Life</p>
+                <p class="disclaimer">Esta página es operada de forma independiente por una asesora de Monterrey New York Life®. Proteger Mejor® es marca registrada.</p>
             </div>
         </div>
     </footer>
+
+    <!-- ── WhatsApp Flotante ── -->
+    <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20seguros"
+       class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">¡Escríbeme ahora!</span>
+    </a>
 
     <script src="script.js"></script>
 </body>
