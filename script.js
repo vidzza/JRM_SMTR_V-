@@ -357,7 +357,7 @@
 
         navAnchors.forEach(function (a) {
             const href = a.getAttribute('href');
-            a.style.color = (href === '#' + activeId) ? 'var(--purple-dark)' : '';
+            a.classList.toggle('nav-link--active', href === '#' + activeId);
         });
     }
 
