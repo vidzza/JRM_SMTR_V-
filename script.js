@@ -51,6 +51,10 @@
         spans[0].style.transform = '';
         spans[1].style.opacity   = '';
         spans[2].style.transform = '';
+        // Close any open mobile dropdowns
+        document.querySelectorAll('.nav-item-dropdown.mobile-open').forEach(function (el) {
+            el.classList.remove('mobile-open');
+        });
     }
 
     if (hamburger && navLinks) {
@@ -69,10 +73,29 @@
             }
         });
 
-        navLinks.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', closeNav);
+        navLinks.querySelectorAll('a:not([data-tab-target])').forEach(function (link) {
+            link.addEventListener('click', function () {
+                // Only close if not a dropdown toggle
+                if (!this.classList.contains('nav-link-dropdown')) {
+                    closeNav();
+                }
+            });
         });
     }
+
+    /* ──────────────────────────────────────────
+       MOBILE DROPDOWN ACCORDION
+    ────────────────────────────────────────── */
+    document.querySelectorAll('.nav-link-dropdown').forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+            var isMobile = window.innerWidth <= 768;
+            if (!isMobile) return; // desktop uses CSS hover
+            e.preventDefault();
+            var parent = this.closest('.nav-item-dropdown');
+            if (!parent) return;
+            parent.classList.toggle('mobile-open');
+        });
+    });
 
     /* ──────────────────────────────────────────
        SMOOTH SCROLL (offset for fixed header)
@@ -362,6 +385,19 @@
     }
 
     /* ──────────────────────────────────────────
+       DROPDOWN — nav service links activate tab
+    ────────────────────────────────────────── */
+    document.querySelectorAll('[data-tab-target]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            var tabId = this.dataset.tabTarget;
+            if (tabId) {
+                // Small delay to let scroll happen first
+                setTimeout(function () { activateTab(tabId); }, 400);
+            }
+        });
+    });
+
+    /* ──────────────────────────────────────────
        WHATSAPP CTA TRACKING
     ────────────────────────────────────────── */
     document.querySelectorAll('a[href*="wa.me"]').forEach(function (btn) {
@@ -400,6 +436,16 @@
     updateScrollProgress();
     updateHeader();
     updateActiveNav();
+
+    // Set nav top dynamically to match real header height
+    function setNavTop() {
+        if (!header || !navLinks) return;
+        var h = header.offsetHeight;
+        navLinks.style.top = h + 'px';
+        navLinks.style.maxHeight = 'calc(100vh - ' + h + 'px)';
+    }
+    setNavTop();
+    window.addEventListener('resize', setNavTop, { passive: true });
 
     // Preconnect WhatsApp DNS
     window.addEventListener('load', function () {
