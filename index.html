@@ -52,13 +52,25 @@
                 </a>
 
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#por-que" class="nav-link">¿Por qué yo?</a></li>
+                    <li><a href="#inicio" class="nav-link">Asegúrate</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#servicios" class="nav-link nav-link-dropdown">
+                            Servicios <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                        </a>
+                        <ul class="nav-dropdown">
+                            <li><a href="#servicios" data-tab-target="gmm"><i class="ph-bold ph-first-aid-kit"></i> Gastos Médicos</a></li>
+                            <li><a href="#servicios" data-tab-target="vida"><i class="ph-bold ph-heart"></i> Vida Vitalicio</a></li>
+                            <li><a href="#servicios" data-tab-target="becas"><i class="ph-bold ph-graduation-cap"></i> Segubeca</a></li>
+                            <li><a href="#servicios" data-tab-target="mujer"><i class="ph-bold ph-flower"></i> Vida Mujer</a></li>
+                            <li><a href="#servicios" data-tab-target="empresa"><i class="ph-bold ph-briefcase"></i> Hombre Clave</a></li>
+                            <li><a href="#servicios" data-tab-target="retiro"><i class="ph-bold ph-sun-horizon"></i> Retiro</a></li>
+                        </ul>
+                    </li>
+                     <li><a href="#por-que" class="nav-link">¿Qué me diferencia?</a></li>
                     <li><a href="#testimonios" class="nav-link">Clientes</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li>
-                        <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                        <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
                            class="nav-cta" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i> Agenda gratis
                         </a>
@@ -87,16 +99,16 @@
             <svg class="hero-geo-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <pattern id="hexGrid" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
-                        <polygon points="30,2 58,17 58,35 30,50 2,35 2,17" fill="none" stroke="rgba(167,139,250,0.07)" stroke-width="1"/>
+                        <polygon points="30,2 58,17 58,35 30,50 2,35 2,17" fill="none" stroke="rgba(124,58,237,0.07)" stroke-width="1"/>
                     </pattern>
                 </defs>
                 <rect width="800" height="600" fill="url(#hexGrid)"/>
-                <!-- Accent lines -->
-                <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(245,158,11,0.04)" stroke-width="1"/>
-                <line x1="0" y1="300" x2="800" y2="300" stroke="rgba(245,158,11,0.04)" stroke-width="1"/>
-                <line x1="0" y1="450" x2="800" y2="450" stroke="rgba(245,158,11,0.04)" stroke-width="1"/>
+                <!-- White accent lines -->
+                <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(255,255,255,0.30)" stroke-width="1"/>
+                <line x1="0" y1="300" x2="800" y2="300" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+                <line x1="0" y1="450" x2="800" y2="450" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
                 <!-- Diagonal glow line -->
-                <line x1="-100" y1="600" x2="900" y2="-100" stroke="rgba(124,58,237,0.06)" stroke-width="2"/>
+                <line x1="-100" y1="600" x2="900" y2="-100" stroke="rgba(124,58,237,0.10)" stroke-width="2"/>
             </svg>
         </div>
 
@@ -110,14 +122,14 @@
                     </div>
 
                     <h1 class="hero-title" id="hero-heading">
-                        Protege lo que<br>
-                        <em>más importa.</em>
+                        Que lo importante<br>
+                        <em>no dependa de la suerte.</em>
                     </h1>
 
                     <p class="hero-subtitle">
-                        Asesoría financiera personalizada para familias y empresas.
-                        Vida, salud y retiro — con el respaldo de la aseguradora
-                        <strong>#1 en México</strong>.
+                        Planeación financiera estratégica para familias y empresas.
+                        Protección en vida, salud y retiro — respaldada por la
+                        <strong>aseguradora líder en México</strong>.
                     </p>
 
                     <div class="hero-stats">
@@ -138,7 +150,7 @@
                     </div>
 
                     <div class="hero-actions">
-                        <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                        <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i>
                             Agenda tu asesoría gratuita
@@ -150,61 +162,53 @@
                     </div>
 
                     <div class="hero-trust">
-                        <i class="ph-duotone ph-shield-check" aria-hidden="true" style="color:var(--gold-dark);font-size:1rem;"></i>
+                        <i class="ph-duotone ph-shield-check" aria-hidden="true"></i>
                         <span>Sin compromiso · Respuesta en menos de 1 hora</span>
                     </div>
                 </div>
 
                 <!-- Foto / Visual -->
                 <div class="hero-visual">
-                    <div class="hero-photo-wrapper">
-                        <div class="hero-photo-frame">
-                            <img
-                                src="JR-foto.jpeg"
-                                alt="Julissa Ramos, Asesora Financiera Seguros Monterrey New York Life"
-                                class="hero-photo"
-                                width="380"
-                                height="507"
-                                loading="eager"
-                                decoding="async"
-                            >
-                        </div>
+                    <div class="hero-photo-frame">
+                        <img
+                            src="JR-foto.jpeg"
+                            alt="Julissa Ramos, Asesora Financiera Seguros Monterrey New York Life"
+                            class="hero-photo"
+                            width="440"
+                            height="560"
+                            loading="eager"
+                            decoding="async"
+                        >
+                    </div>
 
-                        <!-- Tarjeta flotante 1 — Calificación A++ -->
-                        <div class="float-card float-card-top" data-animate="floatIn">
-                            <i class="ph-duotone ph-trophy float-svg" aria-hidden="true"></i>
-                            <div>
+                    <!-- Badges debajo de la foto — sin tapar -->
+                    <div class="hero-badges">
+                        <div class="hero-badge" data-animate="floatIn">
+                            <i class="ph-duotone ph-trophy hero-badge-icon"></i>
+                            <div class="hero-badge-text">
                                 <strong>Calificación A++</strong>
                                 <span>AM Best · SMNYL</span>
                             </div>
                         </div>
-
-                        <!-- Tarjeta flotante 2 — Asesoría gratuita -->
-                        <div class="float-card float-card-bottom" data-animate="floatIn">
-                            <i class="ph-duotone ph-check-circle float-svg float-svg-green" aria-hidden="true"></i>
-                            <div>
-                                <strong>Asesoría gratuita</strong>
+                        <div class="hero-badge" data-animate="floatIn">
+                            <div class="hero-badge-stars">★★★★★</div>
+                            <div class="hero-badge-text">
+                                <strong>100+ familias</strong>
+                                <span>protegidas</span>
+                            </div>
+                        </div>
+                        <div class="hero-badge" data-animate="floatIn">
+                            <i class="ph-duotone ph-check-circle hero-badge-icon hero-badge-icon-green"></i>
+                            <div class="hero-badge-text">
+                                <strong>Asesoría gratis</strong>
                                 <span>Sin compromiso</span>
                             </div>
                         </div>
-
-                        <!-- Tarjeta flotante 3 — Clientes satisfechos -->
-                        <div class="float-card float-card-mid" data-animate="floatIn">
-                            <div class="float-stars" aria-hidden="true">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            </div>
-                            <div>
-                                <strong>5★ Clientes felices</strong>
-                                <span>100+ familias protegidas</span>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
+
+                    <!-- Frase July — debajo de los badges -->
+                    <p class="hero-photo-quote">"No estoy para ayudarte a tener decisiones cómodas, sino decisiones inteligentes."</p>
+                </div>            </div>
         </div>
 
         <div class="hero-scroll-hint" aria-hidden="true">
@@ -339,9 +343,9 @@
                         <i class="ph-bold ph-heart" aria-hidden="true"></i>
                         <span>Vida Vitalicio</span>
                     </button>
-                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="becas" title="Segubecas">
+                    <button class="tab-btn" role="tab" aria-selected="false" data-tab="becas" title="Segubeca">
                         <i class="ph-bold ph-graduation-cap" aria-hidden="true"></i>
-                        <span>Segubecas</span>
+                        <span>Segubeca</span>
                     </button>
                     <button class="tab-btn" role="tab" aria-selected="false" data-tab="mujer" title="Vida Mujer">
                         <i class="ph-bold ph-flower" aria-hidden="true"></i>
@@ -378,36 +382,31 @@
                                     <span>Familias</span><span>Adultos mayores</span>
                                     <span>Deportistas</span><span>Viajeros frecuentes</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20necesito%20información%20sobre%20Gastos%20Médicos%20Mayores"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20necesito%20información%20sobre%20Gastos%20Médicos%20Mayores"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Solicitar cotización
                                 </a>
                             </div>
                             <div class="service-visual">
-                                <!-- Big illustration: medical cross with heartbeat line -->
-                                <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                    <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(167,139,250,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
-                                    <rect x="44" y="32" width="32" height="56" rx="6" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
-                                    <rect x="32" y="44" width="56" height="32" rx="6" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
-                                    <path d="M30 78 Q36 60 42 72 Q48 84 54 66 Q60 48 66 60 Q72 72 78 66 Q84 60 90 70" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round"/>
-                                </svg>
-                                <div class="service-highlights">
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-hospital" aria-hidden="true"></i>
-                                        <span>Hospitalización</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-pill" aria-hidden="true"></i>
-                                        <span>Medicamentos</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-stethoscope" aria-hidden="true"></i>
-                                        <span>Especialistas</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-siren" aria-hidden="true"></i>
-                                        <span>Emergencias</span>
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=800&fit=crop&q=85" alt="Médico profesional en hospital moderno" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Red nacional</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                                    <span>Hospitalización</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                    <span>Especialistas</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                    <span>Emergencias</span>
+                                </div>
                                     </div>
                                 </div>
                             </div>
@@ -431,46 +430,34 @@
                                     <span>Herencia</span><span>Ahorro a largo plazo</span>
                                     <span>Patrimonio familiar</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Vida%20Vitalicio"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20información%20sobre%20Vida%20Vitalicio"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Conocer más
                                 </a>
                             </div>
                              <div class="service-visual">
-                                 <!-- Heart with growth trend — enlarged + animated -->
-                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                      <!-- Outer ring pulse -->
-                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(167,139,250,0.12)" stroke-width="1" stroke-dasharray="4 6"/>
-                                     <!-- Heart shape -->
-                                     <path d="M60 82 C60 82 30 64 30 44 A18 18 0 0 1 60 38 A18 18 0 0 1 90 44 C90 64 60 82 60 82Z" stroke="#A78BFA" stroke-width="2.5" fill="rgba(167,139,250,0.18)"/>
-                                     <!-- Inner heart glow -->
-                                     <path d="M60 75 C60 75 38 62 38 48 A11 11 0 0 1 60 44 A11 11 0 0 1 82 48 C82 62 60 75 60 75Z" fill="rgba(167,139,250,0.10)"/>
-                                     <!-- Growth line -->
-                                     <path d="M34 78 L46 64 L55 70 L66 52 L78 58" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                     <!-- Arrow up -->
-                                     <path d="M78 58 L82 52 M78 58 L84 58" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                     <circle cx="78" cy="58" r="3.5" fill="#F59E0B"/>
-                                 </svg>
-                                 <div class="service-highlights">
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-infinity" aria-hidden="true"></i>
-                                         <span>Cobertura vitalicia</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-piggy-bank" aria-hidden="true"></i>
-                                         <span>Valor en efectivo</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-users" aria-hidden="true"></i>
-                                         <span>Herencia familiar</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-lock" aria-hidden="true"></i>
-                                         <span>Prima fija siempre</span>
-                                     </div>
-                                 </div>
-                             </div>
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=800&fit=crop&q=85" alt="Familia feliz y protegida" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                    <span>Protección vitalicia</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Valor en efectivo</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                    <span>Herencia familiar</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                                    <span>Prima fija</span>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -490,46 +477,34 @@
                                 <div class="service-tags">
                                     <span>Padres de familia</span><span>Futuros papás</span><span>Abuelos</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Segubecas"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20información%20sobre%20Segubecas"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Cotizar ahora
                                 </a>
                             </div>
-                             <div class="service-visual">
-                                 <!-- Graduation cap with growth path -->
-                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(167,139,250,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
-                                     <path d="M60 34 L92 50 L60 66 L28 50 Z" stroke="#A78BFA" stroke-width="2.5" stroke-linejoin="round" fill="rgba(167,139,250,0.18)"/>
-                                     <!-- Cap top highlight -->
-                                     <path d="M60 34 L92 50" stroke="rgba(167,139,250,0.5)" stroke-width="1"/>
-                                     <!-- Gown lines -->
-                                     <path d="M42 57 L42 75 C42 75 50 84 60 84 C70 84 78 75 78 75 L78 57" stroke="#A78BFA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                                     <!-- Tassel string -->
-                                     <path d="M92 50 L92 66" stroke="#A78BFA" stroke-width="2.5" stroke-linecap="round"/>
-                                     <circle cx="92" cy="70" r="4" stroke="#F59E0B" stroke-width="2" fill="rgba(245,158,11,0.20)"/>
-                                     <!-- Star -->
-                                     <polygon points="60,40 62,46 68,46 63,50 65,56 60,52 55,56 57,50 52,46 58,46" fill="#F59E0B"/>
-                                 </svg>
-                                 <div class="service-highlights">
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-student" aria-hidden="true"></i>
-                                         <span>Cada etapa escolar</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-shield-check" aria-hidden="true"></i>
-                                         <span>Continúa si falleces</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-calendar" aria-hidden="true"></i>
-                                         <span>Ahorro programado</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-arrows-out" aria-hidden="true"></i>
-                                         <span>Flexible</span>
-                                     </div>
-                                 </div>
-                             </div>
+                                                          <div class="service-visual">
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=800&fit=crop&q=85" alt="Estudiante universitario con futuro asegurado" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                                    <span>Educación garantizada</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                    <span>El plan continúa</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    <span>Ahorro programado</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h8"/></svg>
+                                    <span>Flexible</span>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -549,48 +524,34 @@
                                 <div class="service-tags">
                                     <span>Emprendedoras</span><span>Profesionistas</span><span>Madres</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Ahorro%20Vida%20Mujer"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20información%20sobre%20Ahorro%20Vida%20Mujer"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Más información
                                 </a>
                             </div>
-                             <div class="service-visual">
-                                 <!-- Woman + shield + flower detail -->
-                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(167,139,250,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
-                                     <circle cx="60" cy="36" r="12" stroke="#A78BFA" stroke-width="2.5" fill="rgba(167,139,250,0.15)"/>
-                                     <!-- Body -->
-                                     <path d="M38 88 C38 72 48 62 60 62 C72 62 82 72 82 88" stroke="#A78BFA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                                     <!-- Arms open (confidence) -->
-                                     <path d="M48 70 L36 62 M72 70 L84 62" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
-                                     <!-- Shield badge -->
-                                     <path d="M78 48 C78 48 70 52 60 50 C50 52 42 48 42 48 L42 62 C42 72 50 78 60 80 C70 78 78 72 78 62 Z" stroke="#F59E0B" stroke-width="2" fill="rgba(245,158,11,0.14)" stroke-linejoin="round"/>
-                                     <path d="M53 59 L58 64 L69 53" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                     <!-- Flower petal decoration -->
-                                     <circle cx="98" cy="28" r="3" fill="rgba(167,139,250,0.35)"/>
-                                     <circle cx="104" cy="34" r="2" fill="rgba(245,158,11,0.50)"/>
-                                     <circle cx="22" cy="88" r="2.5" fill="rgba(167,139,250,0.25)"/>
-                                 </svg>
-                                 <div class="service-highlights">
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-heart" aria-hidden="true"></i>
-                                         <span>Coberturas exclusivas</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-trend-up" aria-hidden="true"></i>
-                                         <span>Patrimonio propio</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-crown" aria-hidden="true"></i>
-                                         <span>Independencia</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-users" aria-hidden="true"></i>
-                                         <span>Familia segura</span>
-                                     </div>
-                                 </div>
-                             </div>
+                                                          <div class="service-visual">
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=700&h=800&fit=crop&q=85" alt="Mujer profesional independiente" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                                    <span>Coberturas exclusivas</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                    <span>Patrimonio propio</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                                    <span>Independencia</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                    <span>Familia segura</span>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -610,51 +571,34 @@
                                 <div class="service-tags">
                                     <span>PYMES</span><span>Socios fundadores</span><span>Directivos</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20soy%20empresa%20y%20quiero%20información%20sobre%20Hombre%20Clave"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20soy%20empresa%20y%20quiero%20información%20sobre%20Hombre%20Clave"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Cotización empresarial
                                 </a>
                             </div>
-                             <div class="service-visual">
-                                 <!-- Building / key man — detailed -->
-                                  <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                      <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.12)" stroke="rgba(167,139,250,0.30)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                      <circle class="svg-ring-inner" cx="60" cy="60" r="48" stroke="rgba(167,139,250,0.10)" stroke-width="1" stroke-dasharray="3 8"/>
-                                      <!-- Building body -->
-                                     <rect x="30" y="48" width="60" height="44" rx="3" stroke="#A78BFA" stroke-width="2.5" fill="rgba(167,139,250,0.10)"/>
-                                     <!-- Roof -->
-                                     <path d="M26 48 L60 28 L94 48" stroke="#A78BFA" stroke-width="2.5" stroke-linejoin="round" fill="rgba(167,139,250,0.08)"/>
-                                     <!-- Chimney -->
-                                     <rect x="70" y="32" width="8" height="12" rx="1" fill="rgba(167,139,250,0.15)" stroke="#A78BFA" stroke-width="1.5"/>
-                                     <!-- Door -->
-                                     <rect x="50" y="70" width="20" height="22" rx="2" stroke="#A78BFA" stroke-width="2" fill="rgba(167,139,250,0.15)"/>
-                                     <circle cx="67" cy="81" r="2" fill="#A78BFA"/>
-                                     <!-- Windows with gold -->
-                                     <rect x="35" y="56" width="12" height="12" rx="1.5" fill="rgba(245,158,11,0.25)" stroke="#F59E0B" stroke-width="1.5"/>
-                                     <rect x="73" y="56" width="12" height="12" rx="1.5" fill="rgba(245,158,11,0.25)" stroke="#F59E0B" stroke-width="1.5"/>
-                                     <!-- Key icon -->
-                                     <circle cx="94" cy="36" r="7" stroke="#F59E0B" stroke-width="2" fill="rgba(245,158,11,0.15)"/>
-                                     <path d="M94 43 L94 54 M91 50 L94 50 M94 53 L97 53" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
-                                 </svg>
-                                 <div class="service-highlights">
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-bank" aria-hidden="true"></i>
-                                         <span>Capital operativo</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-receipt" aria-hidden="true"></i>
-                                         <span>Deducción fiscal</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-handshake" aria-hidden="true"></i>
-                                         <span>Socios protegidos</span>
-                                     </div>
-                                     <div class="highlight-item">
-                                         <i class="ph-bold ph-chart-line-up" aria-hidden="true"></i>
-                                         <span>Negocio continúa</span>
-                                     </div>
-                                 </div>
-                             </div>
+                                                          <div class="service-visual">
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&h=800&fit=crop&q=85" alt="Edificio corporativo moderno" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    <span>Capital operativo</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z"/></svg>
+                                    <span>Deducción fiscal</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+                                    <span>Socios protegidos</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                    <span>Negocio continúa</span>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -674,68 +618,31 @@
                                 <div class="service-tags">
                                     <span>Profesionistas</span><span>Emprendedores</span><span>Freelancers</span>
                                 </div>
-                                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20Planes%20de%20Retiro"
+                                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20información%20sobre%20Planes%20de%20Retiro"
                                    class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-whatsapp"></i> Planear mi retiro
                                 </a>
                             </div>
-                            <div class="service-visual">
-                                <!-- Retiro: calendar + growth chart + coin stack -->
-                                <svg class="service-svg service-svg-animate" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                     <!-- Outer ring animated -->
-                                     <circle class="svg-ring-outer" cx="60" cy="60" r="56" fill="rgba(167,139,250,0.10)" stroke="rgba(167,139,250,0.35)" stroke-width="1.5" stroke-dasharray="6 4"/>
-                                     <!-- Middle ring counter-rotating -->
-                                     <circle class="svg-ring-inner" cx="60" cy="60" r="44" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.18)" stroke-width="1" stroke-dasharray="3 8"/>
-                                    <!-- Calendar base -->
-                                    <rect x="30" y="36" width="38" height="34" rx="3" fill="rgba(167,139,250,0.15)" stroke="#A78BFA" stroke-width="1.8"/>
-                                    <!-- Calendar header -->
-                                    <rect x="30" y="36" width="38" height="9" rx="3" fill="#7C3AED"/>
-                                    <rect x="30" y="42" width="38" height="3" fill="#7C3AED"/>
-                                    <!-- Calendar rings -->
-                                    <rect x="39" y="33" width="3" height="6" rx="1.5" fill="#F59E0B"/>
-                                    <rect x="57" y="33" width="3" height="6" rx="1.5" fill="#F59E0B"/>
-                                    <!-- Calendar grid dots -->
-                                    <circle cx="39" cy="52" r="1.5" fill="#A78BFA"/>
-                                    <circle cx="47" cy="52" r="1.5" fill="#A78BFA"/>
-                                    <circle cx="55" cy="52" r="1.5" fill="#A78BFA"/>
-                                    <circle cx="63" cy="52" r="1.5" fill="#A78BFA"/>
-                                    <circle cx="39" cy="60" r="1.5" fill="#A78BFA" opacity="0.6"/>
-                                    <circle cx="47" cy="60" r="1.5" fill="#F59E0B"/>
-                                    <circle cx="55" cy="60" r="2.5" fill="#F59E0B"/>
-                                    <circle cx="63" cy="60" r="1.5" fill="#A78BFA" opacity="0.6"/>
-                                    <!-- Growth bars below calendar -->
-                                    <rect x="32" y="78" width="6" height="10" rx="1" fill="#A78BFA" opacity="0.55"/>
-                                    <rect x="41" y="73" width="6" height="15" rx="1" fill="#A78BFA" opacity="0.70"/>
-                                    <rect x="50" y="67" width="6" height="21" rx="1" fill="#7C3AED" opacity="0.85"/>
-                                    <rect x="59" y="61" width="6" height="27" rx="1" fill="#7C3AED"/>
-                                    <!-- Growth trend arrow -->
-                                    <path d="M70 75 L82 58" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
-                                    <polygon points="84,55 82,62 77,58" fill="#F59E0B"/>
-                                    <!-- Coin stack (right side) -->
-                                    <ellipse cx="86" cy="80" rx="8" ry="3" fill="#F59E0B" opacity="0.9"/>
-                                    <rect x="78" y="77" width="16" height="3" fill="#F59E0B" opacity="0.9"/>
-                                    <ellipse cx="86" cy="77" rx="8" ry="3" fill="#F3E6B8"/>
-                                    <rect x="78" y="74" width="16" height="3" fill="#F59E0B" opacity="0.8"/>
-                                    <ellipse cx="86" cy="74" rx="8" ry="3" fill="#F3E6B8" opacity="0.9"/>
-                                    <!-- Star accent top right -->
-                                    <path d="M95 28 L96.5 33 L102 33 L97.5 36 L99 41 L95 38 L91 41 L92.5 36 L88 33 L93.5 33 Z" fill="#F59E0B" opacity="0.85"/>
-                                </svg>
-                                <div class="service-highlights">
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-calendar-check" aria-hidden="true"></i>
-                                        <span>Retiro garantizado</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-chart-line-up" aria-hidden="true"></i>
-                                        <span>Crecimiento compuesto</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-coins" aria-hidden="true"></i>
-                                        <span>Anti-inflación</span>
-                                    </div>
-                                    <div class="highlight-item">
-                                        <i class="ph-bold ph-sliders" aria-hidden="true"></i>
-                                        <span>Aportaciones flexibles</span>
+                                                        <div class="service-visual">
+                                <div class="svc-photo">
+                                    <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=700&h=800&fit=crop&q=85" alt="Pareja disfrutando su retiro en la naturaleza" class="svc-photo-img" loading="lazy">
+                                    <div class="svc-photo-chips">
+                                        <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Retiro garantizado</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                    <span>Crecimiento compuesto</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <span>Anti-inflación</span>
+                                </div>
+                                <div class="svc-chip">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                                    <span>Aportaciones flexibles</span>
+                                </div>
                                     </div>
                                 </div>
                             </div>
@@ -752,7 +659,7 @@
         <div class="container">
             <div class="section-header" data-animate="fadeInUp">
                 <span class="section-tag">Mi Diferencial</span>
-                <h2 id="porque-heading">¿Por qué elegir<br><span class="text-accent">a Julissa?</span></h2>
+                <h2 id="porque-heading">¿Qué me<br><span class="text-accent">diferencia?</span></h2>
             </div>
 
             <div class="why-grid">
@@ -793,8 +700,8 @@
                     <span class="why-stat-label">Calificación clientes</span>
                 </div>
                 <div class="why-stat-card">
-                    <span class="why-stat-number" data-counter="10" data-suffix="+ años">0</span>
-                    <span class="why-stat-label">De experiencia</span>
+                    <span class="why-stat-number" data-counter="175" data-suffix="+">0</span>
+                    <span class="why-stat-label">Años de respaldo NYL</span>
                 </div>
             </div>
 
@@ -870,7 +777,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <blockquote>
-                            "Julissa me explicó todo con mucha paciencia. Sin tecnicismos, sin prisa. Hoy tengo un seguro de GMM para toda mi familia y dormimos mucho más tranquilos."
+                            "July me explicó todo con mucha paciencia. Sin tecnicismos, sin prisa. Hoy tengo un seguro de Gasto Médico para toda mi familia y dormimos mucho más tranquilos."
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-avatar">MG</div>
@@ -890,7 +797,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <blockquote>
-                            "Como emprendedor necesitaba proteger mi negocio. Julissa me asesoró en Hombre Clave y Retiro. Clarísima, profesional y siempre disponible."
+                            "Como emprendedor necesitaba proteger mi negocio. July me asesoró en Hombre Clave y Retiro. Clarísima, profesional y siempre disponible."
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-avatar">RL</div>
@@ -910,7 +817,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <blockquote>
-                            "Contraté Segubecas para mi hija de 3 años. Julissa fue honesta sobre cada opción y nunca sentí que me querían vender algo — sentí que realmente le importaba el futuro de mi niña."
+                            "Contraté Segubecas para mi hija de 3 años. July fue honesta sobre cada opción y nunca sentí que me querían vender algo — sentí que realmente le importaba el futuro de mi niña."
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-avatar">AP</div>
@@ -930,7 +837,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <blockquote>
-                            "El Ahorro Vida Mujer fue la mejor decisión que he tomado. Julissa me guió paso a paso y hoy tengo un plan que me da seguridad e independencia financiera."
+                            "El Ahorro Vida Mujer fue la mejor decisión que he tomado. July me guió paso a paso y hoy tengo un plan que me da seguridad e independencia financiera."
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-avatar">CF</div>
@@ -950,7 +857,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <blockquote>
-                            "Llevaba años posponiendo contratar un seguro de vida. Julissa me ayudó a entender por qué es urgente y me encontró el plan perfecto para mi presupuesto. 100% recomendada."
+                            "Llevaba años posponiendo contratar un seguro de vida. July me ayudó a entender por qué es urgente y me encontró el plan perfecto para mi presupuesto. 100% recomendada."
                         </blockquote>
                         <div class="testimonial-author">
                             <div class="author-avatar">JM</div>
@@ -984,7 +891,7 @@
                     <span class="section-tag">FAQ</span>
                     <h2 id="faq-heading">Preguntas<br><span class="text-accent">frecuentes</span></h2>
                     <p>¿Tienes dudas? Aquí resolvemos las más comunes. Si no encuentras lo que buscas, escríbeme directamente.</p>
-                    <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20tengo%20una%20pregunta%20sobre%20seguros"
+                    <a href="https://wa.me/526146038380?text=Hola%20July,%20tengo%20una%20pregunta%20sobre%20seguros"
                        class="btn btn-primary faq-cta" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> Pregunta directamente
                     </a>
@@ -1054,7 +961,7 @@
 
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
-                            <span>¿La asesoría con Julissa tiene algún costo?</span>
+                            <span>¿La asesoría con July tiene algún costo?</span>
                             <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>
                         <div class="faq-answer">
@@ -1109,7 +1016,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
                    class="btn btn-cta" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i>
                     Contactar por WhatsApp
@@ -1129,34 +1036,66 @@
                 <p>Consejos financieros, novedades y respuestas a tus dudas — todos los días.</p>
             </div>
             <div class="social-cards" data-animate="fadeInUp">
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20agendar%20una%20asesor%C3%ADa%20gratuita"
+                   target="_blank" rel="noopener noreferrer" class="social-card social-card--wa">
+                    <div class="social-card-icon-wrap social-icon-wa">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-card-body">
+                        <strong>WhatsApp</strong>
+                        <span>+52 614 603 8380</span>
+                    </div>
+                    <div class="social-card-arrow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
                 <a href="https://www.instagram.com/seguroquesiconjuly/" target="_blank" rel="noopener noreferrer"
-                   class="social-card instagram">
-                    <div class="social-card-icon"><i class="fab fa-instagram"></i></div>
-                    <div class="social-card-info">
+                   class="social-card social-card--ig">
+                    <div class="social-card-icon-wrap social-icon-ig">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-card-body">
                         <strong>Instagram</strong>
                         <span>@seguroquesiconjuly</span>
                     </div>
-                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <div class="social-card-arrow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
 
+                <!-- TikTok -->
                 <a href="https://www.tiktok.com/@julissaramosgalav" target="_blank" rel="noopener noreferrer"
-                   class="social-card tiktok">
-                    <div class="social-card-icon"><i class="fab fa-tiktok"></i></div>
-                    <div class="social-card-info">
+                   class="social-card social-card--tt">
+                    <div class="social-card-icon-wrap social-icon-tt">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="social-card-body">
                         <strong>TikTok</strong>
                         <span>@julissaramosgalav</span>
                     </div>
-                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <div class="social-card-arrow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
 
-                <a href="mailto:julissaramosgal@gmail.com" class="social-card email">
-                    <div class="social-card-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="social-card-info">
+                <!-- Email -->
+                <a href="mailto:julissaramosgal@gmail.com" class="social-card social-card--em">
+                    <div class="social-card-icon-wrap social-icon-em">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="social-card-body">
                         <strong>Email</strong>
                         <span>julissaramosgal@gmail.com</span>
                     </div>
-                    <svg class="social-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <div class="social-card-arrow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
+
             </div>
         </div>
     </section>
@@ -1239,7 +1178,8 @@
     </footer>
 
     <!-- ── WhatsApp Flotante ── -->
-    <a href="https://wa.me/526146038380?text=Hola%20Julissa,%20quiero%20información%20sobre%20seguros"
+        <!-- ── WhatsApp Flotante ── -->
+    <a href="https://wa.me/526146038380?text=Hola%20July,%20quiero%20información%20sobre%20seguros"
        class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="wa-tooltip">¡Escríbeme ahora!</span>
