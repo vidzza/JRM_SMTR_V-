@@ -240,6 +240,11 @@ img { display: block; max-width: 100%; }
 .nav-item-dropdown {
     position: relative;
 }
+/* Touch devices (tablets 769-900px): allow JS mobile-open to show dropdown */
+.nav-item-dropdown.mobile-open > .nav-dropdown {
+    display: block;
+    animation: dropdownFade 0.2s ease-out;
+}
 .nav-link-dropdown {
     display: inline-flex;
     align-items: center;
@@ -785,24 +790,6 @@ img { display: block; max-width: 100%; }
     color: var(--gray);
     white-space: nowrap;
 }
-.trust-bar-items {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    flex: 1;
-    justify-content: center;
-}
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--dark-gray);
-    white-space: nowrap;
-}
-.trust-item i { color: var(--purple-dark); font-size: 1rem; }
 
 /* ══════════════════════════════════════════════
    SHARED SECTION STYLES
@@ -2140,7 +2127,7 @@ section { padding: 96px 0; position: relative; }
     /* Calculate correct top: 44px logo + 2×1rem padding ≈ 76px */
     .nav-links {
         position: fixed;
-        top: 76px; left: -100%;
+        top: 76px; left: 0;
         width: 100%;
         max-height: calc(100vh - 76px);
         overflow-y: auto;
@@ -2149,12 +2136,13 @@ section { padding: 96px 0; position: relative; }
         padding: 1.5rem 1.5rem 2rem;
         gap: 0;
         box-shadow: var(--shadow-lg);
-        transition: left 0.3s ease;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
         z-index: 999;
         list-style: none;
         border-top: 1px solid var(--beige-dark);
     }
-    .nav-links.open { left: 0; }
+    .nav-links.open { transform: translateX(0); }
 
     /* Nav items stacked with tap-friendly sizes */
     .nav-links > li { width: 100%; border-bottom: 1px solid var(--beige-dark); }
@@ -2258,8 +2246,6 @@ section { padding: 96px 0; position: relative; }
     .philosophy-box { align-items: center; }
 
     /* ── Misc ── */
-    .trust-bar-items { gap: 1.2rem; }
-    .trust-item span { display: none; }
     .cta-features { flex-direction: column; align-items: center; gap: 0.8rem; }
     .smnyl-grid { grid-template-columns: 1fr 1fr; }
 
@@ -2319,7 +2305,7 @@ section { padding: 96px 0; position: relative; }
     flex-shrink: 0;
 }
 .nav-item-dropdown:hover .dropdown-chevron { transform: rotate(180deg); }
-/* mobile-open chevron handled by .nav-item-dropdown.mobile-open .dropdown-chevron above */
+.nav-item-dropdown.mobile-open .dropdown-chevron { transform: rotate(180deg); }
 
 /* ── 360px safety — very small phones ── */
 @media (max-width: 360px) {

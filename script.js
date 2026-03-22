@@ -89,7 +89,8 @@
     document.querySelectorAll('.nav-link-dropdown').forEach(function (trigger) {
         trigger.addEventListener('click', function (e) {
             var isMobile = window.innerWidth <= 768;
-            if (!isMobile) return; // desktop uses CSS hover
+            var isTouch  = window.matchMedia('(hover: none)').matches;
+            if (!isMobile && !isTouch) return; // desktop mouse uses CSS hover
             e.preventDefault();
             var parent = this.closest('.nav-item-dropdown');
             if (!parent) return;
@@ -230,6 +231,7 @@
 
         function startAuto() {
             if (prefersReducedMotion.matches) return; // respect user preference
+            clearInterval(autoTimer);
             autoTimer = setInterval(next, 5000);
         }
         function resetAuto() {
@@ -366,7 +368,7 @@
        ACTIVE NAV LINK (highlight current section)
     ────────────────────────────────────────── */
     const navAnchors = document.querySelectorAll('.nav-link');
-    const sections   = Array.from(document.querySelectorAll('section[id], div[id="inicio"]'));
+    const sections   = Array.from(document.querySelectorAll('section[id]'));
 
     function updateActiveNav() {
         const scrollY   = window.scrollY;
@@ -390,10 +392,7 @@
     document.querySelectorAll('[data-tab-target]').forEach(function (link) {
         link.addEventListener('click', function (e) {
             var tabId = this.dataset.tabTarget;
-            if (tabId) {
-                // Small delay to let scroll happen first
-                setTimeout(function () { activateTab(tabId); }, 400);
-            }
+            if (tabId) { activateTab(tabId); }
         });
     });
 
