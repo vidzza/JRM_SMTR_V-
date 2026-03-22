@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badge Designs</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0ebfa;
+    color: #1A0B30;
+    padding: 32px 24px 60px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #3D1267;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.88rem;
+    margin-bottom: 36px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2.5px solid transparent;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.10);
+    position: relative;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(124,58,237,0.18); }
+  .card.selected {
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 4px rgba(124,58,237,0.18), 0 8px 32px rgba(124,58,237,0.20);
+  }
+  .card.selected::after {
+    content: '✓ Seleccionado';
+    position: absolute;
+    top: 12px; right: 12px;
+    background: #7C3AED;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  .card-label {
+    background: #3D1267;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+  }
+
+  .preview {
+    background: linear-gradient(160deg, #f5eeff 0%, #e8d5f5 60%, #d4b3e8 100%);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* Shared photo placeholder */
+  .photo-placeholder {
+    width: 140px;
+    height: 178px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #c4a0e0 0%, #9d6fc9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    border: 2px solid rgba(167,139,250,0.4);
+    box-shadow: 0 8px 24px rgba(124,58,237,0.20);
+    flex-shrink: 0;
+  }
+
+  /* ── OPCIÓN 1: Stat chips compactos ── */
+  .opt1-badges { display: flex; flex-direction: column; gap: 6px; width: 140px; }
+  .opt1-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.90);
+    border: 1px solid rgba(124,58,237,0.18);
+    border-radius: 8px;
+    padding: 6px 10px;
+    backdrop-filter: blur(8px);
+  }
+  .opt1-icon { font-size: 0.9rem; flex-shrink: 0; }
+  .opt1-text { display: flex; flex-direction: column; }
+  .opt1-strong { font-size: 0.70rem; font-weight: 700; color: #1A0B30; line-height: 1.2; }
+  .opt1-sub { font-size: 0.60rem; color: #6B7280; line-height: 1.2; }
+
+  /* ── OPCIÓN 2: Stats en fila tipo KPI ── */
+  .opt2-badges {
+    display: flex; gap: 0;
+    background: rgba(255,255,255,0.92);
+    border-radius: 12px;
+    border: 1px solid rgba(124,58,237,0.18);
+    overflow: hidden;
+    width: 100%;
+    max-width: 280px;
+    backdrop-filter: blur(8px);
+  }
+  .opt2-badge {
+    flex: 1; padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid rgba(124,58,237,0.12);
+  }
+  .opt2-badge:last-child { border-right: none; }
+  .opt2-num { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #5B21B6; font-weight: 700; display: block; line-height: 1; margin-bottom: 3px; }
+  .opt2-label { font-size: 0.58rem; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.3; display: block; }
+
+  /* ── OPCIÓN 3: Tags minimalistas ── */
+  .opt3-badges { display: flex; flex-direction: column; gap: 4px; width: 140px; }
+  .opt3-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba(91,33,182,0.08);
+    border-left: 3px solid #7C3AED;
+  }
+  .opt3-icon { font-size: 0.75rem; color: #7C3AED; flex-shrink: 0; }
+  .opt3-text { font-size: 0.68rem; font-weight: 600; color: #1A0B30; line-height: 1.3; }
+
+  /* ── OPCIÓN 4: Cards glassmorphism con gradiente ── */
+  .opt4-badges { display: flex; flex-direction: column; gap: 6px; width: 152px; }
+  .opt4-badge {
+    display: flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,240,255,0.95) 100%);
+    border: 1px solid rgba(167,139,250,0.35);
+    border-radius: 12px;
+    padding: 8px 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(124,58,237,0.10);
+  }
+  .opt4-icon-wrap {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #7C3AED, #5B21B6);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: white;
+  }
+  .opt4-text { display: flex; flex-direction: column; }
+  .opt4-strong { font-size: 0.70rem; font-weight: 700; color: #1A0B30; line-height: 1.2; }
+  .opt4-sub { font-size: 0.60rem; color: #7C3AED; font-weight: 600; line-height: 1.2; }
+
+  /* ── OPCIÓN 5: Horizontal floating row ── */
+  .opt5-badges { display: flex; gap: 5px; flex-wrap: nowrap; max-width: 280px; }
+  .opt5-badge {
+    display: flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(167,139,250,0.30);
+    border-radius: 20px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(124,58,237,0.10);
+    backdrop-filter: blur(8px);
+  }
+  .opt5-icon { font-size: 0.8rem; }
+  .opt5-text { font-size: 0.65rem; font-weight: 700; color: #1A0B30; }
+
+  /* ── OPCIÓN 6: Dark modo tarjeta ── */
+  .opt6-badges { display: flex; flex-direction: column; gap: 6px; width: 152px; }
+  .opt6-badge {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(61,18,103,0.85);
+    border: 1px solid rgba(167,139,250,0.20);
+    border-radius: 10px;
+    padding: 8px 12px;
+    backdrop-filter: blur(12px);
+  }
+  .opt6-icon { font-size: 1rem; color: #A78BFA; flex-shrink: 0; }
+  .opt6-text { display: flex; flex-direction: column; }
+  .opt6-strong { font-size: 0.70rem; font-weight: 700; color: white; line-height: 1.2; }
+  .opt6-sub { font-size: 0.60rem; color: rgba(167,139,250,0.80); line-height: 1.2; }
+
+  /* ── OPCIÓN 7: Solo números grandes estilo counter ── */
+  .opt7-badges {
+    display: flex; gap: 16px;
+    width: 100%; max-width: 280px;
+    justify-content: center;
+  }
+  .opt7-badge { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .opt7-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #5B21B6; font-weight: 700; line-height: 1; }
+  .opt7-label { font-size: 0.60rem; color: #6B7280; font-weight: 600; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; max-width: 60px; line-height: 1.3; }
+  .opt7-sep { width: 1px; height: 36px; background: rgba(124,58,237,0.20); align-self: center; }
+
+  /* ── OPCIÓN 8: Ámbar/dorado highlight ── */
+  .opt8-badges { display: flex; flex-direction: column; gap: 5px; width: 152px; }
+  .opt8-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 10px;
+    padding: 7px 11px;
+  }
+  .opt8-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #F59E0B;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(245,158,11,0.15);
+  }
+  .opt8-text { display: flex; flex-direction: column; }
+  .opt8-strong { font-size: 0.70rem; font-weight: 700; color: #1A0B30; line-height: 1.2; }
+  .opt8-sub { font-size: 0.60rem; color: #D97706; font-weight: 600; line-height: 1.2; }
+
+  .desc {
+    padding: 12px 16px 16px;
+  }
+  .desc h3 { font-size: 0.88rem; font-weight: 700; color: #1A0B30; margin-bottom: 3px; }
+  .desc p { font-size: 0.78rem; color: #6B7280; line-height: 1.4; }
+
+  .instruction {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #7C3AED;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+<h1>Diseño de Badges — Hero</h1>
+<p class="subtitle">Abajo de la foto de Julissa · Haz clic en la que más te guste</p>
+<p class="instruction">Puedes seleccionar una o varias opciones</p>
+
+<div class="grid">
+
+  <!-- OPCIÓN 1 -->
+  <div class="card" data-choice="1" onclick="toggleCard(this)">
+    <div class="card-label">1 — Tarjetas rectangulares compactas</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt1-badges">
+        <div class="opt1-badge">
+          <span class="opt1-icon">🏆</span>
+          <div class="opt1-text"><span class="opt1-strong">Calificación A++</span><span class="opt1-sub">AM Best · SMNYL</span></div>
+        </div>
+        <div class="opt1-badge">
+          <span class="opt1-icon" style="color:#F59E0B;font-size:0.7rem;">★★★★★</span>
+          <div class="opt1-text"><span class="opt1-strong">100+ familias</span><span class="opt1-sub">protegidas</span></div>
+        </div>
+        <div class="opt1-badge">
+          <span class="opt1-icon" style="color:#22c55e;">✓</span>
+          <div class="opt1-text"><span class="opt1-strong">Asesoría gratis</span><span class="opt1-sub">Sin compromiso</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Rectángulos compactos</h3>
+      <p>Fondo blanco semitransparente, bordes suaves. Limpio y moderno, similar al original pero mejor proporciones.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 2 -->
+  <div class="card" data-choice="2" onclick="toggleCard(this)">
+    <div class="card-label">2 — Stats en una sola barra</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt2-badges">
+        <div class="opt2-badge">
+          <span class="opt2-num">A++</span>
+          <span class="opt2-label">AM Best SMNYL</span>
+        </div>
+        <div class="opt2-badge">
+          <span class="opt2-num">100+</span>
+          <span class="opt2-label">familias protegidas</span>
+        </div>
+        <div class="opt2-badge">
+          <span class="opt2-num">100%</span>
+          <span class="opt2-label">asesoría gratis</span>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Barra de KPIs</h3>
+      <p>Tres estadísticas en una sola barra horizontal dividida. Impacto visual fuerte, estilo ejecutivo.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 3 -->
+  <div class="card" data-choice="3" onclick="toggleCard(this)">
+    <div class="card-label">3 — Tags con acento lateral</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt3-badges">
+        <div class="opt3-badge">
+          <span class="opt3-icon">🏆</span>
+          <span class="opt3-text">Calificación A++ · AM Best</span>
+        </div>
+        <div class="opt3-badge">
+          <span class="opt3-icon" style="color:#F59E0B;">★</span>
+          <span class="opt3-text">100+ familias protegidas</span>
+        </div>
+        <div class="opt3-badge">
+          <span class="opt3-icon" style="color:#22c55e;">✓</span>
+          <span class="opt3-text">Asesoría gratis, sin compromiso</span>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Tags con línea morada</h3>
+      <p>Minimalista. Borde izquierdo morado, fondo casi transparente. Discreta pero profesional.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 4 -->
+  <div class="card" data-choice="4" onclick="toggleCard(this)">
+    <div class="card-label">4 — Cards con ícono en caja</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt4-badges">
+        <div class="opt4-badge">
+          <div class="opt4-icon-wrap">🏆</div>
+          <div class="opt4-text"><span class="opt4-strong">Calificación A++</span><span class="opt4-sub">AM Best · SMNYL</span></div>
+        </div>
+        <div class="opt4-badge">
+          <div class="opt4-icon-wrap" style="background:linear-gradient(135deg,#F59E0B,#D97706);font-size:0.65rem;">★★★★★</div>
+          <div class="opt4-text"><span class="opt4-strong">100+ familias</span><span class="opt4-sub">protegidas</span></div>
+        </div>
+        <div class="opt4-badge">
+          <div class="opt4-icon-wrap" style="background:linear-gradient(135deg,#22c55e,#16a34a);">✓</div>
+          <div class="opt4-text"><span class="opt4-strong">Asesoría gratis</span><span class="opt4-sub">Sin compromiso</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Cards con ícono en cuadro</h3>
+      <p>Ícono con fondo degradado en caja cuadrada. Más premium y estructurado.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 5 -->
+  <div class="card" data-choice="5" onclick="toggleCard(this)">
+    <div class="card-label">5 — Pills horizontales en fila</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt5-badges">
+        <div class="opt5-badge">
+          <span class="opt5-icon">🏆</span>
+          <span class="opt5-text">A++</span>
+        </div>
+        <div class="opt5-badge">
+          <span class="opt5-icon" style="color:#F59E0B;font-size:0.65rem;">★★★★★</span>
+          <span class="opt5-text">100+ familias</span>
+        </div>
+        <div class="opt5-badge">
+          <span class="opt5-icon" style="color:#22c55e;">✓</span>
+          <span class="opt5-text">Gratis</span>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Pills en una fila</h3>
+      <p>Muy compacto. Tres pills pequeños en horizontal, información súper resumida. Limpio bajo la foto.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 6 -->
+  <div class="card" data-choice="6" onclick="toggleCard(this)">
+    <div class="card-label">6 — Modo oscuro / Dark glass</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt6-badges">
+        <div class="opt6-badge">
+          <span class="opt6-icon">🏆</span>
+          <div class="opt6-text"><span class="opt6-strong">Calificación A++</span><span class="opt6-sub">AM Best · SMNYL</span></div>
+        </div>
+        <div class="opt6-badge">
+          <span class="opt6-icon" style="color:#F59E0B;font-size:0.75rem;">★★★★★</span>
+          <div class="opt6-text"><span class="opt6-strong">100+ familias</span><span class="opt6-sub">protegidas</span></div>
+        </div>
+        <div class="opt6-badge">
+          <span class="opt6-icon" style="color:#22c55e;">✓</span>
+          <div class="opt6-text"><span class="opt6-strong">Asesoría gratis</span><span class="opt6-sub">Sin compromiso</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Dark glass</h3>
+      <p>Fondo morado oscuro semitransparente. Contrasta fuerte con el hero claro. Estilo premium y audaz.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 7 -->
+  <div class="card" data-choice="7" onclick="toggleCard(this)">
+    <div class="card-label">7 — Counters grandes sin badges</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt7-badges">
+        <div class="opt7-badge">
+          <span class="opt7-num">A++</span>
+          <span class="opt7-label">AM Best</span>
+        </div>
+        <div class="opt7-sep"></div>
+        <div class="opt7-badge">
+          <span class="opt7-num">100+</span>
+          <span class="opt7-label">Familias</span>
+        </div>
+        <div class="opt7-sep"></div>
+        <div class="opt7-badge">
+          <span class="opt7-num">Free</span>
+          <span class="opt7-label">Asesoría</span>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Stats sin caja</h3>
+      <p>Sin fondo, sin bordes. Solo números y etiquetas separados por líneas. Elegante y sin ruido visual.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 8 -->
+  <div class="card" data-choice="8" onclick="toggleCard(this)">
+    <div class="card-label">8 — Acento dorado / ámbar</div>
+    <div class="preview">
+      <div class="photo-placeholder">Foto</div>
+      <div class="opt8-badges">
+        <div class="opt8-badge">
+          <div class="opt8-dot" style="background:#7C3AED;box-shadow:0 0 0 3px rgba(124,58,237,0.15);"></div>
+          <div class="opt8-text"><span class="opt8-strong">Calificación A++</span><span class="opt8-sub" style="color:#7C3AED;">AM Best · SMNYL</span></div>
+        </div>
+        <div class="opt8-badge">
+          <div class="opt8-dot"></div>
+          <div class="opt8-text"><span class="opt8-strong">100+ familias</span><span class="opt8-sub">protegidas</span></div>
+        </div>
+        <div class="opt8-badge">
+          <div class="opt8-dot" style="background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.15);"></div>
+          <div class="opt8-text"><span class="opt8-strong">Asesoría gratis</span><span class="opt8-sub" style="color:#16a34a;">Sin compromiso</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <h3>Punto de color + texto</h3>
+      <p>Dot de color para cada categoría (morado, dorado, verde). Muy limpio, el color hace el trabajo de los íconos.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleCard(el) {
+  el.classList.toggle('selected');
+  const selected = [...document.querySelectorAll('.card.selected')].map(c => c.dataset.choice);
+  try {
+    if (window.parent && window.parent.recordSelection) {
+      window.parent.recordSelection(selected.join(','), selected.map(c => 'Opción ' + c).join(', '));
+    }
+  } catch(e) {}
+  // Also try the superpowers helper
+  if (typeof recordChoice === 'function') recordChoice(selected.join(','), selected.map(c => 'Opción ' + c).join(', '));
+}
+</script>
+</body>
+</html>
