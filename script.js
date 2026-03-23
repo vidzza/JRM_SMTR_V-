@@ -479,12 +479,19 @@
     updateHeader();
     updateActiveNav();
 
-    // Set nav top dynamically to match real header height
+    // Set nav padding-top dynamically to match real header height (mobile only)
     function setNavTop() {
         if (!header || !navLinks) return;
-        var h = header.offsetHeight;
-        navLinks.style.top = h + 'px';
-        navLinks.style.maxHeight = 'calc(100vh - ' + h + 'px)';
+        if (window.innerWidth <= 900) {
+            var h = header.offsetHeight;
+            navLinks.style.paddingTop = h + 'px';
+            navLinks.style.top = '0';
+            navLinks.style.maxHeight = '100vh';
+        } else {
+            navLinks.style.paddingTop = '';
+            navLinks.style.top = '';
+            navLinks.style.maxHeight = '';
+        }
     }
     setNavTop();
     window.addEventListener('resize', setNavTop, { passive: true });
