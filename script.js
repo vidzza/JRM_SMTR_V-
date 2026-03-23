@@ -440,32 +440,55 @@
     }, { passive: true });
 
     /* ──────────────────────────────────────────
-       SWIPE — close nav by swiping up on mobile
-       Listen on document (not nav) so overflow-y:auto
-       scroll interception doesn't block the gesture.
-       Only fires when nav is open and scrolled to top.
+       DRAG HANDLE — follow-finger swipe to close
+       touch-action:none on the handle means the
+       browser hands full control to JS, no scroll
+       interference.
     ────────────────────────────────────────── */
-    var navSwipeStartY  = 0;
-    var navSwipeStartX  = 0;
-    var navSwipeAtTop   = false;
+    var dragHandle   = document.getElementById('navDragHandle');
+    var dragStartY   = 0;
+    var dragging     = false;
 
-    document.addEventListener('touchstart', function (e) {
-        if (!navLinks || !navLinks.classList.contains('open')) return;
-        navSwipeStartY = e.changedTouches[0].clientY;
-        navSwipeStartX = e.changedTouches[0].clientX;
-        navSwipeAtTop  = navLinks.scrollTop === 0;
-    }, { passive: true });
+    function setNavTransform(y) {
+        navLinks.style.transform = 'translateY(' + y + 'px)';
+    }
 
-    document.addEventListener('touchend', function (e) {
-        if (!navLinks || !navLinks.classList.contains('open')) return;
-        if (!navSwipeAtTop) return; // user was mid-scroll, don't close
-        var diffY = navSwipeStartY - e.changedTouches[0].clientY;
-        var diffX = Math.abs(navSwipeStartX - e.changedTouches[0].clientX);
-        // Swipe up ≥ 60px and more vertical than horizontal
-        if (diffY > 60 && diffY > diffX) {
-            closeNav();
-        }
-    }, { passive: true });
+    if (dragHandle && navLinks) {
+        dragHandle.addEventListener('touchstart', function (e) {
+            if (!navLinks.classList.contains('open')) return;
+            dragStartY = e.changedTouches[0].clientY;
+            dragging   = true;
+            navLinks.style.transition = 'none'; // finger controls position
+        }, { passive: true });
+
+        dragHandle.addEventListener('touchmove', function (e) {
+            if (!dragging) return;
+            var diff = e.changedTouches[0].clientY - dragStartY; // negative = up
+            if (diff < 0) setNavTransform(diff); // only follow upward drags
+        }, { passive: true });
+
+        dragHandle.addEventListener('touchend', function (e) {
+            if (!dragging) return;
+            dragging = false;
+            var diff    = e.changedTouches[0].clientY - dragStartY; // negative = up
+            var navH    = navLinks.offsetHeight;
+            var halfway = navH * 0.35; // 35% drag = dismiss
+
+            navLinks.style.transition = ''; // re-enable CSS transition
+
+            if (diff < -halfway) {
+                // Dragged far enough → fly off screen then close
+                navLinks.style.transform = 'translateY(-110%)';
+                setTimeout(function () {
+                    navLinks.style.transform = '';
+                    closeNav();
+                }, 320);
+            } else {
+                // Not far enough → snap back open
+                navLinks.style.transform = '';
+            }
+        }, { passive: true });
+    }
 
     /* ──────────────────────────────────────────
        KEYBOARD — close nav on Escape
