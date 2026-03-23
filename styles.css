@@ -240,6 +240,16 @@ img { display: block; max-width: 100%; }
 .nav-item-dropdown {
     position: relative;
 }
+/* Invisible bridge fills the 12px gap between trigger and dropdown
+   so the hover state stays active while the mouse moves down */
+.nav-item-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    right: -10px;
+    height: 14px;
+}
 /* Touch devices (tablets 769-900px): allow JS mobile-open to show dropdown.
    No transform animation — dropdown is position:static at this size. */
 .nav-item-dropdown.mobile-open > .nav-dropdown {
