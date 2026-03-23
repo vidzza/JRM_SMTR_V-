@@ -184,7 +184,7 @@ img { display: block; max-width: 100%; }
 }
 .logo-role {
     font-size: 0.72rem;
-    color: var(--purple-dark);
+    color: var(--dark);
     font-weight: 600;
     letter-spacing: 0.03em;
 }
