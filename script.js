@@ -393,6 +393,7 @@
         link.addEventListener('click', function (e) {
             var tabId = this.dataset.tabTarget;
             if (tabId) { activateTab(tabId); }
+            closeNav();
         });
     });
 
@@ -421,6 +422,26 @@
             ticking = true;
         }
     }, { passive: true });
+
+    /* ──────────────────────────────────────────
+       SWIPE — close nav by swiping up on mobile
+    ────────────────────────────────────────── */
+    var navSwipeStartY = 0;
+    var navSwipeStartX = 0;
+    if (navLinks) {
+        navLinks.addEventListener('touchstart', function (e) {
+            navSwipeStartY = e.changedTouches[0].clientY;
+            navSwipeStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        navLinks.addEventListener('touchend', function (e) {
+            var diffY = navSwipeStartY - e.changedTouches[0].clientY;
+            var diffX = Math.abs(navSwipeStartX - e.changedTouches[0].clientX);
+            // Swipe up: vertical swipe > 60px, more vertical than horizontal
+            if (diffY > 60 && diffY > diffX) {
+                closeNav();
+            }
+        }, { passive: true });
+    }
 
     /* ──────────────────────────────────────────
        KEYBOARD — close nav on Escape

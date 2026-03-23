@@ -1133,7 +1133,7 @@ section { padding: 96px 0; position: relative; }
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold-dark);
+    color: var(--purple);
     margin-bottom: 1rem;
 }
 .why-card-icon {
@@ -1529,7 +1529,7 @@ section { padding: 96px 0; position: relative; }
     font-weight: 600;
     color: rgba(255,255,255,0.80);
 }
-.cta-feat i { color: var(--gold-dark); font-size: 1.3rem; flex-shrink: 0; }
+.cta-feat i { color: var(--purple); font-size: 1.3rem; flex-shrink: 0; }
 .cta-note {
     margin-top: 1.5rem;
     font-family: 'Inter', sans-serif;
@@ -1750,7 +1750,7 @@ section { padding: 96px 0; position: relative; }
     font-weight: 700;
     letter-spacing: 0.10em;
     text-transform: uppercase;
-    color: var(--gold-dark);
+    color: var(--purple);
     margin-bottom: 1.2rem;
 }
 .footer-col ul {
@@ -2087,8 +2087,6 @@ section { padding: 96px 0; position: relative; }
     .hero-visual { margin-block-start: 2rem; }
     .hero-photo-frame { width: 300px; }
     .hero-badges { width: 300px; }
-    .hero-badge { padding: 10px 6px; }
-    .hero-badge-stat { font-size: 1.1rem; }
     .hero-photo-quote { width: 300px; }
     .float-card { display: none; }
 
@@ -2274,9 +2272,6 @@ section { padding: 96px 0; position: relative; }
     /* Hero photo smaller */
     .hero-photo-frame { width: 240px; }
     .hero-badges { width: 240px; }
-    .hero-badge { padding: 9px 5px; }
-    .hero-badge-stat { font-size: 1rem; }
-    .hero-badge-label { font-size: 0.57rem; }
     .hero-photo-quote { width: 240px; font-size: 0.80rem; }
 
     /* Tab labels — still visible but smaller */
