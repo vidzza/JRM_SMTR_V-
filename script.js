@@ -92,6 +92,7 @@
             var isTouch  = window.matchMedia('(hover: none)').matches;
             if (!isMobile && !isTouch) return; // desktop mouse uses CSS hover
             e.preventDefault();
+            e.stopImmediatePropagation(); // prevent smooth-scroll handler from firing closeNav()
             var parent = this.closest('.nav-item-dropdown');
             if (!parent) return;
             parent.classList.toggle('mobile-open');
