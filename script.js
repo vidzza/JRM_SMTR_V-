@@ -426,23 +426,31 @@
 
     /* ──────────────────────────────────────────
        SWIPE — close nav by swiping up on mobile
+       Listen on document (not nav) so overflow-y:auto
+       scroll interception doesn't block the gesture.
+       Only fires when nav is open and scrolled to top.
     ────────────────────────────────────────── */
-    var navSwipeStartY = 0;
-    var navSwipeStartX = 0;
-    if (navLinks) {
-        navLinks.addEventListener('touchstart', function (e) {
-            navSwipeStartY = e.changedTouches[0].clientY;
-            navSwipeStartX = e.changedTouches[0].clientX;
-        }, { passive: true });
-        navLinks.addEventListener('touchend', function (e) {
-            var diffY = navSwipeStartY - e.changedTouches[0].clientY;
-            var diffX = Math.abs(navSwipeStartX - e.changedTouches[0].clientX);
-            // Swipe up: vertical swipe > 60px, more vertical than horizontal
-            if (diffY > 60 && diffY > diffX) {
-                closeNav();
-            }
-        }, { passive: true });
-    }
+    var navSwipeStartY  = 0;
+    var navSwipeStartX  = 0;
+    var navSwipeAtTop   = false;
+
+    document.addEventListener('touchstart', function (e) {
+        if (!navLinks || !navLinks.classList.contains('open')) return;
+        navSwipeStartY = e.changedTouches[0].clientY;
+        navSwipeStartX = e.changedTouches[0].clientX;
+        navSwipeAtTop  = navLinks.scrollTop === 0;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function (e) {
+        if (!navLinks || !navLinks.classList.contains('open')) return;
+        if (!navSwipeAtTop) return; // user was mid-scroll, don't close
+        var diffY = navSwipeStartY - e.changedTouches[0].clientY;
+        var diffX = Math.abs(navSwipeStartX - e.changedTouches[0].clientX);
+        // Swipe up ≥ 60px and more vertical than horizontal
+        if (diffY > 60 && diffY > diffX) {
+            closeNav();
+        }
+    }, { passive: true });
 
     /* ──────────────────────────────────────────
        KEYBOARD — close nav on Escape
