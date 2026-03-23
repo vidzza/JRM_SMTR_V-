@@ -43,6 +43,7 @@
     const hamburger  = document.getElementById('hamburger');
     const navLinks   = document.getElementById('navLinks');
     const navOverlay = document.getElementById('navOverlay');
+    var   dismissTimer = null; // tracks in-progress drag-dismiss animation
 
     function closeNav() {
         if (!navLinks || !hamburger) return;
@@ -66,6 +67,13 @@
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', function () {
+            // If a drag-dismiss animation is mid-flight, abort it cleanly
+            if (dismissTimer) {
+                clearTimeout(dismissTimer);
+                dismissTimer = null;
+                navLinks.style.transform  = '';
+                navLinks.style.transition = '';
+            }
             const isOpen = navLinks.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', String(isOpen));
             const spans = hamburger.querySelectorAll('span');
@@ -441,52 +449,80 @@
 
     /* ──────────────────────────────────────────
        DRAG HANDLE — follow-finger swipe to close
-       touch-action:none on the handle means the
-       browser hands full control to JS, no scroll
-       interference.
+       touch-action:none on the handle gives JS
+       full control — no browser scroll interference.
     ────────────────────────────────────────── */
-    var dragHandle   = document.getElementById('navDragHandle');
-    var dragStartY   = 0;
-    var dragging     = false;
+    var dragHandle = document.getElementById('navDragHandle');
+    var dragStartY = 0;
+    var dragging   = false;
 
-    function setNavTransform(y) {
-        navLinks.style.transform = 'translateY(' + y + 'px)';
+    // Dismiss: fast-exit easing, clean state after animation
+    function snapNavClosed() {
+        navLinks.style.transition = 'transform 0.26s cubic-bezier(0.4, 0, 1, 1)';
+        navLinks.getBoundingClientRect(); // force reflow so browser registers transition first
+        navLinks.style.transform  = 'translateY(-110%)';
+        dismissTimer = setTimeout(function () {
+            dismissTimer = null;
+            closeNav();                      // remove .open → CSS: translateY(-100%)
+            navLinks.style.transform  = '';  // clear inline (already off-screen, no jump)
+            navLinks.style.transition = '';  // restore CSS default
+        }, 280);
+    }
+
+    // Snap back: spring easing feels alive, not mechanical
+    function snapNavOpen() {
+        navLinks.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        navLinks.getBoundingClientRect(); // force reflow
+        navLinks.style.transform  = '';   // .open class → translateY(0), springs back
+        setTimeout(function () { navLinks.style.transition = ''; }, 420);
+    }
+
+    // Reset all drag state — used by touchend and touchcancel
+    function resetDrag() {
+        dragging = false;
+        navLinks.style.transition = '';
+        navLinks.style.transform  = '';
     }
 
     if (dragHandle && navLinks) {
         dragHandle.addEventListener('touchstart', function (e) {
             if (!navLinks.classList.contains('open')) return;
+            // Abort any in-progress dismiss so re-grab works cleanly
+            if (dismissTimer) {
+                clearTimeout(dismissTimer);
+                dismissTimer = null;
+                navLinks.style.transform  = '';
+                navLinks.style.transition = '';
+            }
             dragStartY = e.changedTouches[0].clientY;
             dragging   = true;
-            navLinks.style.transition = 'none'; // finger controls position
+            navLinks.style.transition = 'none'; // finger owns position now
         }, { passive: true });
 
         dragHandle.addEventListener('touchmove', function (e) {
             if (!dragging) return;
-            var diff = e.changedTouches[0].clientY - dragStartY; // negative = up
-            if (diff < 0) setNavTransform(diff); // only follow upward drags
+            var diff = e.changedTouches[0].clientY - dragStartY; // negative = upward
+            if (diff < 0) {
+                navLinks.style.transform = 'translateY(' + diff + 'px)';
+            }
         }, { passive: true });
 
         dragHandle.addEventListener('touchend', function (e) {
             if (!dragging) return;
-            dragging = false;
-            var diff    = e.changedTouches[0].clientY - dragStartY; // negative = up
-            var navH    = navLinks.offsetHeight;
-            var halfway = navH * 0.35; // 35% drag = dismiss
-
-            navLinks.style.transition = ''; // re-enable CSS transition
-
-            if (diff < -halfway) {
-                // Dragged far enough → fly off screen then close
-                navLinks.style.transform = 'translateY(-110%)';
-                setTimeout(function () {
-                    navLinks.style.transform = '';
-                    closeNav();
-                }, 320);
+            dragging   = false;
+            var diff   = e.changedTouches[0].clientY - dragStartY; // negative = up
+            var thresh = navLinks.offsetHeight * 0.3; // 30% of height to dismiss
+            if (diff < -thresh) {
+                snapNavClosed();
             } else {
-                // Not far enough → snap back open
-                navLinks.style.transform = '';
+                snapNavOpen();
             }
+        }, { passive: true });
+
+        // Phone call / notification interrupts touch — reset cleanly
+        dragHandle.addEventListener('touchcancel', function () {
+            if (!dragging) return;
+            resetDrag();
         }, { passive: true });
     }
 
