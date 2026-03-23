@@ -103,7 +103,7 @@
     ────────────────────────────────────────── */
     document.querySelectorAll('.nav-link-dropdown').forEach(function (trigger) {
         trigger.addEventListener('click', function (e) {
-            var isMobile = window.innerWidth <= 768;
+            var isMobile = window.innerWidth <= 900;
             var isTouch  = window.matchMedia('(hover: none)').matches;
             if (!isMobile && !isTouch) return; // desktop mouse uses CSS hover
             e.preventDefault();
