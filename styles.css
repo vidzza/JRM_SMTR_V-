@@ -2353,7 +2353,4 @@ address {
 
     /* Scroll progress: skip width transition */
     .scroll-progress { transition: none; }
-
-    /* Skip link: always visible (no slide-in needed) */
-    .skip-link { transform: none; }
 }
