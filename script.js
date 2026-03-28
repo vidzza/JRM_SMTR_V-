@@ -191,7 +191,6 @@
         const cards   = track.querySelectorAll('.testimonial-card');
         const total   = cards.length;
         let current   = 0;
-        let autoTimer = null;
 
         // Layout: give every card the exact pixel width of the wrapper,
         // then make the track wide enough to hold all cards side-by-side.
@@ -209,7 +208,7 @@
                 const dot = document.createElement('button');
                 dot.className  = 'testimonial-dot' + (i === 0 ? ' active' : '');
                 dot.setAttribute('aria-label', 'Ir al testimonio ' + (i + 1));
-                dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+                dot.addEventListener('click', function () { goTo(i); });
                 dotsWrapper.appendChild(dot);
             });
         }
@@ -245,24 +244,8 @@
             }, 100);
         }, { passive: true });
 
-        function startAuto() {
-            if (prefersReducedMotion.matches) return; // respect user preference
-            clearInterval(autoTimer);
-            autoTimer = setInterval(next, 5000);
-        }
-        function resetAuto() {
-            clearInterval(autoTimer);
-            startAuto();
-        }
-
-        if (prevBtn) prevBtn.addEventListener('click', function () { prev(); resetAuto(); });
-        if (nextBtn) nextBtn.addEventListener('click', function () { next(); resetAuto(); });
-
-        // Pause on hover
-        if (wrapper) {
-            wrapper.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
-            wrapper.addEventListener('mouseleave', startAuto);
-        }
+        if (prevBtn) prevBtn.addEventListener('click', function () { prev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { next(); });
 
         // Touch / swipe
         let touchStartX = 0;
@@ -271,10 +254,8 @@
         }, { passive: true });
         track.addEventListener('touchend', function (e) {
             const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+            if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
         }, { passive: true });
-
-        startAuto();
     }
 
     /* ──────────────────────────────────────────
